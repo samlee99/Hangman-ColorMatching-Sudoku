@@ -11,5 +11,8 @@ package cs245.project;
  * @author amnipp
  */
 public class HangMan {
-    
+    private String[] wordList;
+    public HangMan(){
+        wordList = new String[5];
+    }
 }
