@@ -415,7 +415,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("U");
+        boolean found = hangman.checkCharacter('U');
         if (found) {
             U.setVisible(false);
             System.out.print("\nU is found");
@@ -424,7 +424,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void VActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("V");
+        boolean found = hangman.checkCharacter('V');
         if (found) {
             V.setVisible(false);
             System.out.print("\nV is found");
@@ -433,7 +433,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("W");
+        boolean found = hangman.checkCharacter('W');
         if (found) {
             W.setVisible(false);
             System.out.print("\nW is found");
@@ -442,7 +442,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("X");
+        boolean found = hangman.checkCharacter('X');
         if (found) {
             X.setVisible(false);
             System.out.print("\nX is found");
@@ -451,7 +451,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void YActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("Y");
+        boolean found = hangman.checkCharacter('Y');
         if (found) {
             Y.setVisible(false);
             System.out.print("\nY is found");
@@ -460,7 +460,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void ZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("Z");
+        boolean found = hangman.checkCharacter('Z');
         if (found) {
             Z.setVisible(false);
             System.out.print("\nZ is found");
@@ -469,7 +469,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void IActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("I");
+        boolean found = hangman.checkCharacter('I');
         if (found) {
             I.setVisible(false);
             System.out.print("\nI is found");
@@ -478,7 +478,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("J");
+        boolean found = hangman.checkCharacter('J');
         if (found) {
             J.setVisible(false);
             System.out.print("\nJ is found");
@@ -487,7 +487,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("K");
+        boolean found = hangman.checkCharacter('K');
         if (found) {
             K.setVisible(false);
             System.out.print("\nK is found");
@@ -496,7 +496,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("L");
+        boolean found = hangman.checkCharacter('L');
         if (found) {
             L.setVisible(false);
             System.out.print("\nL is found");
@@ -505,7 +505,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("M");
+        boolean found = hangman.checkCharacter('M');
         if (found) {
             M.setVisible(false);
             System.out.print("\nM is found");
@@ -514,7 +514,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void NActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("N");
+        boolean found = hangman.checkCharacter('N');
         if (found) {
             N.setVisible(false);
             System.out.print("\nN is found");
@@ -523,7 +523,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void OActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("O");
+        boolean found = hangman.checkCharacter('O');
         if (found) {
             O.setVisible(false);
             System.out.print("\nO is found");
@@ -532,7 +532,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("P");
+        boolean found = hangman.checkCharacter('P');
         if (found) {
             P.setVisible(false);
             System.out.print("\nP is found");
@@ -541,7 +541,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("Q");
+        boolean found = hangman.checkCharacter('Q');
         if (found) {
             Q.setVisible(false);
             System.out.print("\nQ is found");
@@ -550,7 +550,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void RActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("R");
+        boolean found = hangman.checkCharacter('R');
         if (found) {
             R.setVisible(false);
             System.out.print("\nR is found");
@@ -559,7 +559,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("A");
+        boolean found = hangman.checkCharacter('A');
         if (found) {
             A.setVisible(false);
             System.out.print("\nA is found");
@@ -571,7 +571,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("B");
+        boolean found = hangman.checkCharacter('B');
         if (found) {
             B.setVisible(false);
             System.out.print("\nB is found");
@@ -580,7 +580,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("C");
+        boolean found = hangman.checkCharacter('C');
         if (found) {
             C.setVisible(false);
             System.out.print("\nC is found");
@@ -589,7 +589,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("D");
+        boolean found = hangman.checkCharacter('D');
         if (found) {
             D.setVisible(false);
             System.out.print("\nD is found");
@@ -598,7 +598,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("E");
+        boolean found = hangman.checkCharacter('E');
         if (found) {
             E.setVisible(false);
             System.out.print("\nE is found");
@@ -607,7 +607,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("F");
+        boolean found = hangman.checkCharacter('F');
         if (found) {
             F.setVisible(false);
             System.out.print("\nF is found");
@@ -616,7 +616,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void GActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("G");
+        boolean found = hangman.checkCharacter('G');
         if (found) {
             G.setVisible(false);
             System.out.print("\nG is found");
@@ -625,7 +625,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void HActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("H");
+        boolean found = hangman.checkCharacter('H');
         if (found) {
             H.setVisible(false);
             System.out.print("\nH is found");
@@ -634,7 +634,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("S");
+        boolean found = hangman.checkCharacter('S');
         if (found) {
             S.setVisible(false);
             System.out.print("\nS is found");
@@ -643,7 +643,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void TActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("T");
+        boolean found = hangman.checkCharacter('T');
         if (found) {
             T.setVisible(false);
             System.out.print("\nT is found");

@@ -30,17 +30,13 @@ public class HangMan {
         int randIndex = new Random().nextInt(WORD_LIST.length+1);
         selectedWord = WORD_LIST[randIndex];
     }
-
-    public void endGame(){
-        
-    }
     
     public char selectCharacter(){
         return ' ';
     }
      
     public boolean checkCharacter(char letter){
-        return selectedWord.contains(selectedWord);
+        return selectedWord.toLowerCase().indexOf(Character.toLowerCase(letter)) > -1;
     }
     
     public String getSelectedWord(){
