@@ -21,8 +21,6 @@ public class HangMan {
     
     public HangMan(){
         initGame();
-        gameLoop();
-        endGame();
     }
     
     public void initGame(){
@@ -32,13 +30,7 @@ public class HangMan {
         int randIndex = new Random().nextInt(WORD_LIST.length+1);
         selectedWord = WORD_LIST[randIndex];
     }
-    
-    private void gameLoop(){
-        while(running){
-            
-        }
-    }
-    
+
     public void endGame(){
         
     }

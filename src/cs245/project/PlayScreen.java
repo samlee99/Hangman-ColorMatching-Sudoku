@@ -22,15 +22,18 @@ public class PlayScreen extends javax.swing.JFrame {
     String Hidden_Word;
     //will be used to check if letter is in word
     String[] wordArray;
+    
+    HangMan hangman;
 
     public PlayScreen() {
         initComponents();
     }
 
     //constructor that will be used in game
-    public PlayScreen(String Hidden_Word) {
+    public PlayScreen(HangMan hangman) {
+        this.hangman = hangman;
         initComponents();
-        this.Hidden_Word = Hidden_Word;
+        this.Hidden_Word = hangman.getSelectedWord();
         wordArray = Hidden_Word.split("");
         System.out.print(Hidden_Word);
         currentTime();

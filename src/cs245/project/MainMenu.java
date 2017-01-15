@@ -117,11 +117,12 @@ public class MainMenu extends javax.swing.JFrame {
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
         // TODO add your handling code here:
         //Select a word
-        String[] WORD_LIST = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
+        /*String[] WORD_LIST = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
         String selectedWord;
         int randIndex = new Random().nextInt(WORD_LIST.length+1);
-        selectedWord = WORD_LIST[randIndex];
-        PlayScreen play = new PlayScreen(selectedWord);
+        selectedWord = WORD_LIST[randIndex];*/
+        HangMan hangman = new HangMan();
+        PlayScreen play = new PlayScreen(hangman);
         play.setVisible(true);
     }//GEN-LAST:event_PlayActionPerformed
 
