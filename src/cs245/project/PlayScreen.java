@@ -5,7 +5,6 @@
  */
 package cs245.project;
 
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -58,7 +57,7 @@ public class PlayScreen extends javax.swing.JFrame {
         letterButtonMap.put('G',G);
         letterButtonMap.put('H',H);
         letterButtonMap.put('S',S);
-        letterButtonMap.put('T',T);        
+        letterButtonMap.put('T',T);    
     }
     
     public void hideKey(Character letter){
@@ -84,10 +83,10 @@ public class PlayScreen extends javax.swing.JFrame {
                 {
                     for(;;)
                     {
-                        Calendar cal = new GregorianCalendar();
-                        int second = cal.get(Calendar.SECOND);
-                        int minute = cal.get(Calendar.MINUTE);
-                        int hour = cal.get(Calendar.HOUR);
+                        GregorianCalendar cal = new GregorianCalendar();
+                        int second = cal.get(GregorianCalendar.SECOND);
+                        int minute = cal.get(GregorianCalendar.MINUTE);
+                        int hour = cal.get(GregorianCalendar.HOUR);
                         Clock.setText(hour + ": " + minute + ":  " + second);
                         try{
                             sleep(1000);
@@ -100,7 +99,6 @@ public class PlayScreen extends javax.swing.JFrame {
                 }
         };
         clock.start();
-
     }
 
     /**
@@ -139,10 +137,13 @@ public class PlayScreen extends javax.swing.JFrame {
         H = new javax.swing.JButton();
         S = new javax.swing.JButton();
         T = new javax.swing.JButton();
-        Image = new javax.swing.JLabel();
         Clock = new javax.swing.JLabel();
+        gameScore = new javax.swing.JLabel();
+        Image = new javax.swing.JLabel();
+        button_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         U.setText("U");
         U.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +151,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 UActionPerformed(evt);
             }
         });
+        getContentPane().add(U);
+        U.setBounds(100, 280, 50, 23);
 
         V.setText("V");
         V.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +160,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 VActionPerformed(evt);
             }
         });
+        getContentPane().add(V);
+        V.setBounds(150, 280, 50, 23);
 
         W.setText("W");
         W.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +169,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 WActionPerformed(evt);
             }
         });
+        getContentPane().add(W);
+        W.setBounds(200, 280, 50, 23);
 
         X.setText("X");
         X.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +178,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 XActionPerformed(evt);
             }
         });
+        getContentPane().add(X);
+        X.setBounds(250, 280, 50, 23);
 
         Y.setText("Y");
         Y.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +187,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 YActionPerformed(evt);
             }
         });
+        getContentPane().add(Y);
+        Y.setBounds(300, 280, 50, 23);
 
         Z.setText("Z");
         Z.addActionListener(new java.awt.event.ActionListener() {
@@ -185,8 +196,18 @@ public class PlayScreen extends javax.swing.JFrame {
                 ZActionPerformed(evt);
             }
         });
+        getContentPane().add(Z);
+        Z.setBounds(350, 280, 50, 23);
 
+        Skip.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Skip.setText("Skip");
+        Skip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SkipActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Skip);
+        Skip.setBounds(400, 280, 50, 19);
 
         I.setText("I");
         I.addActionListener(new java.awt.event.ActionListener() {
@@ -194,6 +215,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 IActionPerformed(evt);
             }
         });
+        getContentPane().add(I);
+        I.setBounds(400, 220, 50, 23);
 
         J.setText("J");
         J.addActionListener(new java.awt.event.ActionListener() {
@@ -201,6 +224,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 JActionPerformed(evt);
             }
         });
+        getContentPane().add(J);
+        J.setBounds(0, 250, 50, 23);
 
         K.setText("K");
         K.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +233,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 KActionPerformed(evt);
             }
         });
+        getContentPane().add(K);
+        K.setBounds(50, 250, 50, 23);
 
         L.setText("L");
         L.addActionListener(new java.awt.event.ActionListener() {
@@ -215,6 +242,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 LActionPerformed(evt);
             }
         });
+        getContentPane().add(L);
+        L.setBounds(100, 250, 50, 23);
 
         M.setText("M");
         M.addActionListener(new java.awt.event.ActionListener() {
@@ -222,6 +251,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 MActionPerformed(evt);
             }
         });
+        getContentPane().add(M);
+        M.setBounds(150, 250, 50, 23);
 
         N.setText("N");
         N.addActionListener(new java.awt.event.ActionListener() {
@@ -229,6 +260,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 NActionPerformed(evt);
             }
         });
+        getContentPane().add(N);
+        N.setBounds(200, 250, 50, 23);
 
         O.setText("O");
         O.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +269,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 OActionPerformed(evt);
             }
         });
+        getContentPane().add(O);
+        O.setBounds(250, 250, 50, 23);
 
         P.setText("P");
         P.addActionListener(new java.awt.event.ActionListener() {
@@ -243,6 +278,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 PActionPerformed(evt);
             }
         });
+        getContentPane().add(P);
+        P.setBounds(300, 250, 50, 23);
 
         Q.setText("Q");
         Q.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +287,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 QActionPerformed(evt);
             }
         });
+        getContentPane().add(Q);
+        Q.setBounds(350, 250, 50, 23);
 
         R.setText("R");
         R.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +296,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 RActionPerformed(evt);
             }
         });
+        getContentPane().add(R);
+        R.setBounds(400, 250, 50, 23);
 
         A.setText("A");
         A.addActionListener(new java.awt.event.ActionListener() {
@@ -264,6 +305,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 AActionPerformed(evt);
             }
         });
+        getContentPane().add(A);
+        A.setBounds(0, 220, 50, 23);
 
         B.setText("B");
         B.addActionListener(new java.awt.event.ActionListener() {
@@ -271,6 +314,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 BActionPerformed(evt);
             }
         });
+        getContentPane().add(B);
+        B.setBounds(50, 220, 50, 23);
 
         C.setText("C");
         C.addActionListener(new java.awt.event.ActionListener() {
@@ -278,6 +323,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 CActionPerformed(evt);
             }
         });
+        getContentPane().add(C);
+        C.setBounds(100, 220, 50, 23);
 
         D.setText("D");
         D.addActionListener(new java.awt.event.ActionListener() {
@@ -285,6 +332,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 DActionPerformed(evt);
             }
         });
+        getContentPane().add(D);
+        D.setBounds(150, 220, 50, 23);
 
         E.setText("E");
         E.addActionListener(new java.awt.event.ActionListener() {
@@ -292,6 +341,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 EActionPerformed(evt);
             }
         });
+        getContentPane().add(E);
+        E.setBounds(200, 220, 50, 23);
 
         F.setText("F");
         F.addActionListener(new java.awt.event.ActionListener() {
@@ -299,6 +350,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 FActionPerformed(evt);
             }
         });
+        getContentPane().add(F);
+        F.setBounds(250, 220, 50, 23);
 
         G.setText("G");
         G.addActionListener(new java.awt.event.ActionListener() {
@@ -306,6 +359,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 GActionPerformed(evt);
             }
         });
+        getContentPane().add(G);
+        G.setBounds(300, 220, 50, 23);
 
         H.setText("H");
         H.addActionListener(new java.awt.event.ActionListener() {
@@ -313,6 +368,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 HActionPerformed(evt);
             }
         });
+        getContentPane().add(H);
+        H.setBounds(350, 220, 50, 23);
 
         S.setText("S");
         S.addActionListener(new java.awt.event.ActionListener() {
@@ -320,6 +377,8 @@ public class PlayScreen extends javax.swing.JFrame {
                 SActionPerformed(evt);
             }
         });
+        getContentPane().add(S);
+        S.setBounds(0, 280, 50, 23);
 
         T.setText("T");
         T.addActionListener(new java.awt.event.ActionListener() {
@@ -327,128 +386,29 @@ public class PlayScreen extends javax.swing.JFrame {
                 TActionPerformed(evt);
             }
         });
+        getContentPane().add(T);
+        T.setBounds(50, 280, 50, 23);
 
+        Clock.setForeground(new java.awt.Color(204, 0, 0));
         Clock.setText("TEXT");
+        getContentPane().add(Clock);
+        Clock.setBounds(380, 0, 68, 14);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(A)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(C, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(D, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(S)
-                            .addComponent(J))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(K)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(L, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(M, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(T)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(U)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(V)
-                                .addGap(8, 8, 8)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(E, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(N, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(W, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(X, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(O, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(F, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Y, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(G, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(P, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Z, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Skip)
-                        .addGap(6, 6, 6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Q, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                            .addComponent(H, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(R, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(I, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Clock, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Clock)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(C)
-                    .addComponent(B)
-                    .addComponent(A)
-                    .addComponent(D)
-                    .addComponent(E)
-                    .addComponent(F)
-                    .addComponent(G)
-                    .addComponent(H)
-                    .addComponent(I))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(J)
-                    .addComponent(K)
-                    .addComponent(L)
-                    .addComponent(M)
-                    .addComponent(N)
-                    .addComponent(O)
-                    .addComponent(P)
-                    .addComponent(Q)
-                    .addComponent(R))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Y)
-                        .addComponent(Z)
-                        .addComponent(Skip))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(S)
-                        .addComponent(T)
-                        .addComponent(U)
-                        .addComponent(V)
-                        .addComponent(W)
-                        .addComponent(X))))
-        );
+        gameScore.setForeground(new java.awt.Color(204, 0, 0));
+        gameScore.setText("Score: 100");
+        getContentPane().add(gameScore);
+        gameScore.setBounds(10, 0, 80, 30);
 
-        pack();
+        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/trooper1.png"))); // NOI18N
+        getContentPane().add(Image);
+        Image.setBounds(0, 0, 450, 220);
+
+        button_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/black.jpg"))); // NOI18N
+        getContentPane().add(button_background);
+        button_background.setBounds(0, 200, 450, 100);
+
+        setSize(new java.awt.Dimension(465, 339));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UActionPerformed
@@ -606,6 +566,12 @@ public class PlayScreen extends javax.swing.JFrame {
 
     }//GEN-LAST:event_TActionPerformed
 
+    private void SkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipActionPerformed
+        // TODO add your handling code here:
+        hangman.loadEndPage();
+        this.dispose();
+    }//GEN-LAST:event_SkipActionPerformed
+
     public boolean CheckWord(String letter) {
         for (int i = 0; i < (wordArray.length + 1); i++) {
             if (letter.equalsIgnoreCase(wordArray[i])) {
@@ -661,7 +627,7 @@ public class PlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton G;
     private javax.swing.JButton H;
     private javax.swing.JButton I;
-    private javax.swing.JLabel Image;
+    public javax.swing.JLabel Image;
     private javax.swing.JButton J;
     private javax.swing.JButton K;
     private javax.swing.JButton L;
@@ -680,5 +646,7 @@ public class PlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton X;
     private javax.swing.JButton Y;
     private javax.swing.JButton Z;
+    private javax.swing.JLabel button_background;
+    public javax.swing.JLabel gameScore;
     // End of variables declaration//GEN-END:variables
 }

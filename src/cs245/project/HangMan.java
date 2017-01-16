@@ -7,6 +7,7 @@
 package cs245.project;
 
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,10 +19,13 @@ public class HangMan implements Runnable{
     private String selectedWord;
     private char selectedChar;
     private int attempt;
-    private int score;
+    private int score = 100;
     private Thread t;
     private String threadName = "hangman";
+    HighScoreScreen hs = new HighScoreScreen();
     private PlayScreen ps;
+    private int badGuess = 1;
+    
     private void initGame(){
         running = true;
         score = 100;
@@ -42,15 +46,40 @@ public class HangMan implements Runnable{
             }            
             if(checkCharacter(selectedChar)) {
                 System.out.println("Found " + selectedChar);
-                ps.hideKey(selectedChar);
                 selectedChar = ' ';
             }else{
                 System.err.println("Did not find " + selectedChar);
+                ps.hideKey(selectedChar);
                 selectedChar = ' ';
+                badGuess += 1;
+                changeImage(badGuess);
+                changeScore();
             }
         }
     }
     
+    public void changeScore()
+    {
+        score -= 10;
+        ps.gameScore.setText("Score: " + score);
+    }
+    
+    public void  changeImage(int badGuess)
+    {
+        String imageName = "/cs245/project/trooper_images/trooper" + badGuess + ".png";
+        ImageIcon icon = new ImageIcon(getClass().getResource(imageName));
+        ps.Image.setIcon(icon);
+    }
+    
+    public void loadEndPage()
+    {
+        hs.setVisible(true);
+        hs.setPlayerScore(score);
+        hs.Back.setVisible(false);
+        hs.End.setVisible(true);
+        hs.Player_Score.setVisible(true);
+        hs.Player_Score.setText("Your Score: " + score);
+    }
     public void selectCharacter(char letter){
         selectedChar = letter;
     }

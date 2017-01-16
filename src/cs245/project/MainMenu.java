@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import static cs245.project.Splash.splashInit;
 import static java.lang.Thread.sleep;
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -49,8 +50,8 @@ public class MainMenu extends javax.swing.JFrame {
                 }
         };
         clock.start();
-
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,8 +65,13 @@ public class MainMenu extends javax.swing.JFrame {
         High_Score = new javax.swing.JButton();
         Credits = new javax.swing.JButton();
         Clock = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        dark_trooper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         Play.setText("Play");
         Play.addActionListener(new java.awt.event.ActionListener() {
@@ -73,45 +79,56 @@ public class MainMenu extends javax.swing.JFrame {
                 PlayActionPerformed(evt);
             }
         });
+        getContentPane().add(Play);
+        Play.setBounds(10, 240, 83, 23);
 
         High_Score.setText("High Score");
+        High_Score.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                High_ScoreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(High_Score);
+        High_Score.setBounds(110, 240, 83, 23);
 
         Credits.setText("Credits");
+        Credits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreditsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Credits);
+        Credits.setBounds(210, 240, 83, 23);
 
-        Clock.setText("TEXT");
+        Clock.setForeground(new java.awt.Color(153, 0, 0));
+        Clock.setText("TIME");
+        getContentPane().add(Clock);
+        Clock.setBounds(320, 10, 60, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(307, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(High_Score, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Credits, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Play, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Clock)
-                        .addGap(37, 37, 37))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Clock)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
-                .addComponent(Play)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(High_Score)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Credits)
-                .addContainerGap())
-        );
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Add Icon image here");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 70, 120, 90);
 
-        pack();
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Your escort has DIED, ");
+        jLabel2.setAutoscrolls(true);
+        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 10, 130, 30);
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("guess the extraction codeword to escape the trooper");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 30, 360, 20);
+
+        dark_trooper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/star-wars-backgrounds.jpg"))); // NOI18N
+        getContentPane().add(dark_trooper);
+        dark_trooper.setBounds(0, 0, 400, 300);
+
+        setSize(new java.awt.Dimension(416, 339));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
@@ -122,11 +139,27 @@ public class MainMenu extends javax.swing.JFrame {
         int randIndex = new Random().nextInt(WORD_LIST.length+1);
         selectedWord = WORD_LIST[randIndex];*/
         HangMan hangman = new HangMan();
+        MainMenu menu = new MainMenu();
         hangman.start();
         PlayScreen play = new PlayScreen(hangman);
         hangman.setPlayScreen(play);
         play.setVisible(true);
+        menu.setVisible(false);
+        this.dispose();
+        
     }//GEN-LAST:event_PlayActionPerformed
+
+    private void High_ScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_High_ScoreActionPerformed
+        // TODO add your handling code here:
+        HighScoreScreen highScore = new HighScoreScreen();
+        highScore.setVisible(true);
+    }//GEN-LAST:event_High_ScoreActionPerformed
+
+    private void CreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditsActionPerformed
+        // TODO add your handling code here:
+        CreditsScreen credits = new CreditsScreen();
+        credits.setVisible(true);
+    }//GEN-LAST:event_CreditsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,5 +186,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Credits;
     private javax.swing.JButton High_Score;
     private javax.swing.JButton Play;
+    private javax.swing.JLabel dark_trooper;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
