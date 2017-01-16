@@ -75,8 +75,18 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         High_Score.setText("High Score");
+        High_Score.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                High_ScoreActionPerformed(evt);
+            }
+        });
 
         Credits.setText("Credits");
+        Credits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreditsActionPerformed(evt);
+            }
+        });
 
         Clock.setText("TEXT");
 
@@ -112,6 +122,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
@@ -127,6 +138,18 @@ public class MainMenu extends javax.swing.JFrame {
         hangman.setPlayScreen(play);
         play.setVisible(true);
     }//GEN-LAST:event_PlayActionPerformed
+
+    private void High_ScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_High_ScoreActionPerformed
+        // TODO add your handling code here:
+        HighScoreScreen highScore = new HighScoreScreen();
+        highScore.setVisible(true);
+    }//GEN-LAST:event_High_ScoreActionPerformed
+
+    private void CreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditsActionPerformed
+        // TODO add your handling code here:
+        CreditsScreen credits = new CreditsScreen();
+        credits.setVisible(true);
+    }//GEN-LAST:event_CreditsActionPerformed
 
     /**
      * @param args the command line arguments
