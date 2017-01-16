@@ -7,6 +7,7 @@ package cs245.project;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,15 +25,52 @@ public class PlayScreen extends javax.swing.JFrame {
     String[] wordArray;
     
     HangMan hangman;
-
+    HashMap<Character, javax.swing.JButton> letterButtonMap  = new HashMap<>(); 
+    
+    
     public PlayScreen() {
         initComponents();
     }
-
+    
+    public void mapButtonToLetters(){
+        letterButtonMap.put('U',U);
+        letterButtonMap.put('V',V);
+        letterButtonMap.put('W',W);
+        letterButtonMap.put('X',X);
+        letterButtonMap.put('Y',Y);
+        letterButtonMap.put('Z',Z);
+        letterButtonMap.put('I',I);
+        letterButtonMap.put('J',J);
+        letterButtonMap.put('K',K);
+        letterButtonMap.put('L',L);
+        letterButtonMap.put('M',M);
+        letterButtonMap.put('N',N);
+        letterButtonMap.put('O',O);
+        letterButtonMap.put('P',P);
+        letterButtonMap.put('Q',Q);
+        letterButtonMap.put('R',R);
+        letterButtonMap.put('A',A);
+        letterButtonMap.put('B',B);
+        letterButtonMap.put('C',C);
+        letterButtonMap.put('D',D);
+        letterButtonMap.put('E',E);
+        letterButtonMap.put('F',F);
+        letterButtonMap.put('G',G);
+        letterButtonMap.put('H',H);
+        letterButtonMap.put('S',S);
+        letterButtonMap.put('T',T);        
+    }
+    
+    public void hideKey(Character letter){
+        System.out.println(letter);
+        System.out.println(letterButtonMap.containsKey(letter));
+        letterButtonMap.get(letter).setVisible(false);
+    }
     //constructor that will be used in game
     public PlayScreen(HangMan hangman) {
         this.hangman = hangman;
-        initComponents();
+        initComponents();        
+        mapButtonToLetters();
         this.Hidden_Word = hangman.getSelectedWord();
         wordArray = Hidden_Word.split("");
         System.out.print(Hidden_Word);
@@ -411,243 +449,162 @@ public class PlayScreen extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("U");
-        if (found) {
-            U.setVisible(false);
-            System.out.print("\nU is found");
-        }
+        hangman.selectCharacter('U');
     }//GEN-LAST:event_UActionPerformed
 
     private void VActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("V");
-        if (found) {
-            V.setVisible(false);
-            System.out.print("\nV is found");
-        }
+        hangman.selectCharacter('V');
+
     }//GEN-LAST:event_VActionPerformed
 
     private void WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("W");
-        if (found) {
-            W.setVisible(false);
-            System.out.print("\nW is found");
-        }
+        hangman.selectCharacter('W');
+
     }//GEN-LAST:event_WActionPerformed
 
     private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("X");
-        if (found) {
-            X.setVisible(false);
-            System.out.print("\nX is found");
-        }
+        hangman.selectCharacter('X');
+
     }//GEN-LAST:event_XActionPerformed
 
     private void YActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("Y");
-        if (found) {
-            Y.setVisible(false);
-            System.out.print("\nY is found");
-        }
+        hangman.selectCharacter('Y');
+
     }//GEN-LAST:event_YActionPerformed
 
     private void ZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("Z");
-        if (found) {
-            Z.setVisible(false);
-            System.out.print("\nZ is found");
-        }
+        hangman.selectCharacter('Z');
+
     }//GEN-LAST:event_ZActionPerformed
 
     private void IActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("I");
-        if (found) {
-            I.setVisible(false);
-            System.out.print("\nI is found");
-        }
+        hangman.selectCharacter('I');
+
     }//GEN-LAST:event_IActionPerformed
 
     private void JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("J");
-        if (found) {
-            J.setVisible(false);
-            System.out.print("\nJ is found");
-        }
+        hangman.selectCharacter('J');
+
     }//GEN-LAST:event_JActionPerformed
 
     private void KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("K");
-        if (found) {
-            K.setVisible(false);
-            System.out.print("\nK is found");
-        }
+        hangman.selectCharacter('K');
+
     }//GEN-LAST:event_KActionPerformed
 
     private void LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("L");
-        if (found) {
-            L.setVisible(false);
-            System.out.print("\nL is found");
-        }
+        hangman.selectCharacter('L');
+
     }//GEN-LAST:event_LActionPerformed
 
     private void MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("M");
-        if (found) {
-            M.setVisible(false);
-            System.out.print("\nM is found");
-        }
+        hangman.selectCharacter('M');
+
     }//GEN-LAST:event_MActionPerformed
 
     private void NActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("N");
-        if (found) {
-            N.setVisible(false);
-            System.out.print("\nN is found");
-        }
+        hangman.selectCharacter('N');
+
     }//GEN-LAST:event_NActionPerformed
 
     private void OActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("O");
-        if (found) {
-            O.setVisible(false);
-            System.out.print("\nO is found");
-        }
+        hangman.selectCharacter('O');
+
     }//GEN-LAST:event_OActionPerformed
 
     private void PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("P");
-        if (found) {
-            P.setVisible(false);
-            System.out.print("\nP is found");
-        }
+        hangman.selectCharacter('P');
+
     }//GEN-LAST:event_PActionPerformed
 
     private void QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("Q");
-        if (found) {
-            Q.setVisible(false);
-            System.out.print("\nQ is found");
-        }
+        hangman.selectCharacter('Q');
+
     }//GEN-LAST:event_QActionPerformed
 
     private void RActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("R");
-        if (found) {
-            R.setVisible(false);
-            System.out.print("\nR is found");
-        }
+        hangman.selectCharacter('R');
+
     }//GEN-LAST:event_RActionPerformed
 
     private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("A");
-        if (found) {
-            A.setVisible(false);
-            System.out.print("\nA is found");
-        } else {
+        hangman.selectCharacter('A');
 
-            System.out.print("\nA is not found");
-        }
     }//GEN-LAST:event_AActionPerformed
 
     private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("B");
-        if (found) {
-            B.setVisible(false);
-            System.out.print("\nB is found");
-        }
+        hangman.selectCharacter('B');
+
     }//GEN-LAST:event_BActionPerformed
 
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("C");
-        if (found) {
-            C.setVisible(false);
-            System.out.print("\nC is found");
-        }
+        hangman.selectCharacter('C');
+
     }//GEN-LAST:event_CActionPerformed
 
     private void DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("D");
-        if (found) {
-            D.setVisible(false);
-            System.out.print("\nD is found");
-        }
+        hangman.selectCharacter('D');
+
     }//GEN-LAST:event_DActionPerformed
 
     private void EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("E");
-        if (found) {
-            E.setVisible(false);
-            System.out.print("\nE is found");
-        }
+        hangman.selectCharacter('E');
+
     }//GEN-LAST:event_EActionPerformed
 
     private void FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("F");
-        if (found) {
-            F.setVisible(false);
-            System.out.print("\nF is found");
-        }
+        hangman.selectCharacter('F');
+
     }//GEN-LAST:event_FActionPerformed
 
     private void GActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("G");
-        if (found) {
-            G.setVisible(false);
-            System.out.print("\nG is found");
-        }
+        hangman.selectCharacter('G');
+
     }//GEN-LAST:event_GActionPerformed
 
     private void HActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("H");
-        if (found) {
-            H.setVisible(false);
-            System.out.print("\nH is found");
-        }
+        hangman.selectCharacter('H');
+
     }//GEN-LAST:event_HActionPerformed
 
     private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("S");
-        if (found) {
-            S.setVisible(false);
-            System.out.print("\nS is found");
-        }
+        hangman.selectCharacter('S');
+
     }//GEN-LAST:event_SActionPerformed
 
     private void TActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TActionPerformed
         // TODO add your handling code here:
-        boolean found = CheckWord("T");
-        if (found) {
-            T.setVisible(false);
-            System.out.print("\nT is found");
-        }
+        hangman.selectCharacter('T');
+
     }//GEN-LAST:event_TActionPerformed
 
     public boolean CheckWord(String letter) {
