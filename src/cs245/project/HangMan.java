@@ -25,6 +25,8 @@ public class HangMan implements Runnable{
     HighScoreScreen hs = new HighScoreScreen();
     private PlayScreen ps;
     private int badGuess = 1;
+    private int guessesToWin = 10;
+    private final int guessesToLose = 7;
     
     private void initGame(){
         running = true;
@@ -33,6 +35,19 @@ public class HangMan implements Runnable{
         //Select a word
         int randIndex = new Random().nextInt(WORD_LIST.length);
         selectedWord = WORD_LIST[randIndex];
+        setGuessesToWin(selectedWord);                
+    }
+    
+    public void setGuessesToWin(String selectedWord){
+        char c;
+        String chars = "";
+        for(int i = 0; i < selectedWord.length(); i++){
+            c = selectedWord.charAt(i);
+            if (chars.indexOf(c) == -1){
+                chars += c;
+            }
+        }
+        guessesToWin = chars.length();
     }
     
     public void setPlayScreen(PlayScreen ps){
@@ -46,6 +61,8 @@ public class HangMan implements Runnable{
             }            
             if(checkCharacter(selectedChar)) {
                 System.out.println("Found " + selectedChar);
+                ps.hideKey(selectedChar);
+                guessesToWin--;
                 selectedChar = ' ';
             }else{
                 System.err.println("Did not find " + selectedChar);
@@ -54,6 +71,15 @@ public class HangMan implements Runnable{
                 badGuess += 1;
                 changeImage(badGuess);
                 changeScore();
+            }
+            if(guessesToWin == 0){
+                loadEndPage(score);
+                ps.dispose();
+            }
+            else if (badGuess == guessesToLose){
+                Thread.sleep(1000);
+                loadEndPage(0);
+                ps.dispose();
             }
         }
     }
@@ -71,14 +97,15 @@ public class HangMan implements Runnable{
         ps.Image.setIcon(icon);
     }
     
-    public void loadEndPage()
+    //realScore used to differentiate between skipping and winning games
+    public void loadEndPage(int realScore)
     {
         hs.setVisible(true);
-        hs.setPlayerScore(score);
+        hs.setPlayerScore(realScore);
         hs.Back.setVisible(false);
         hs.End.setVisible(true);
         hs.Player_Score.setVisible(true);
-        hs.Player_Score.setText("Your Score: " + score);
+        hs.Player_Score.setText("Your Score: " + realScore);
     }
     public void selectCharacter(char letter){
         selectedChar = letter;

@@ -568,7 +568,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void SkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipActionPerformed
         // TODO add your handling code here:
-        hangman.loadEndPage();
+        hangman.loadEndPage(0);
         this.dispose();
     }//GEN-LAST:event_SkipActionPerformed
 

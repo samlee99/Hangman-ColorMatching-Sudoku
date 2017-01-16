@@ -110,7 +110,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Serif" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Sam Lee, 009501037"/>
+        <Property name="text" type="java.lang.String" value="Joshua Ludwig, 009725534"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">

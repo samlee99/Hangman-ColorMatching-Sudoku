@@ -50,7 +50,7 @@ public class CreditsScreen extends javax.swing.JFrame {
         jLabel4.setText("Andrew Nipp, 009602502");
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel5.setText("Sam Lee, 009501037");
+        jLabel5.setText("Joshua Ludwig, 009725534");
 
         jLabel6.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel6.setText("Sam Lee, 009501037");
