@@ -122,7 +122,9 @@ public class MainMenu extends javax.swing.JFrame {
         int randIndex = new Random().nextInt(WORD_LIST.length+1);
         selectedWord = WORD_LIST[randIndex];*/
         HangMan hangman = new HangMan();
+        hangman.start();
         PlayScreen play = new PlayScreen(hangman);
+        hangman.setPlayScreen(play);
         play.setVisible(true);
     }//GEN-LAST:event_PlayActionPerformed
 
