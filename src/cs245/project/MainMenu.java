@@ -124,6 +124,9 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel3.setBounds(20, 30, 360, 20);
 
         dark_trooper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/star-wars-backgrounds.jpg"))); // NOI18N
+        dark_trooper.setMaximumSize(new java.awt.Dimension(600, 400));
+        dark_trooper.setMinimumSize(new java.awt.Dimension(600, 400));
+        dark_trooper.setPreferredSize(new java.awt.Dimension(600, 400));
         getContentPane().add(dark_trooper);
         dark_trooper.setBounds(0, 0, 400, 300);
 

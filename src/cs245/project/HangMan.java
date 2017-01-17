@@ -6,6 +6,7 @@
 
 package cs245.project;
 
+import java.util.Arrays;
 import java.util.Random;
 import javax.swing.ImageIcon;
 
@@ -17,6 +18,7 @@ public class HangMan implements Runnable{
     private final String[] WORD_LIST = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
     private boolean running;
     private String selectedWord;
+    private String hiddenWord;
     private char selectedChar;
     private int attempt;
     private int score = 100;
@@ -35,9 +37,26 @@ public class HangMan implements Runnable{
         //Select a word
         int randIndex = new Random().nextInt(WORD_LIST.length);
         selectedWord = WORD_LIST[randIndex];
-        setGuessesToWin(selectedWord);                
+        //We need to create a string of the same size as selectedWord by fill it with underscore
+        char[] createHiddenWord = new char[selectedWord.length()];
+        Arrays.fill(createHiddenWord,'_');
+        hiddenWord = new String(createHiddenWord);
+        setGuessesToWin(selectedWord);
     }
     
+    public void correctGuess(char letter) {
+        int pos = selectedWord.toLowerCase().indexOf(Character.toLowerCase(letter));
+        while(pos >= 0){
+            StringBuilder builder = new StringBuilder(hiddenWord);
+            builder.deleteCharAt(pos);
+            hiddenWord = builder.insert(pos, letter).toString();       
+            pos = selectedWord.toLowerCase().indexOf(Character.toLowerCase(letter), pos+1);    
+        }
+        
+            System.out.println(hiddenWord);
+        ps.updateHiddenWord(hiddenWord);
+    }
+        
     public void setGuessesToWin(String selectedWord){
         char c;
         String chars = "";
@@ -61,6 +80,7 @@ public class HangMan implements Runnable{
             }            
             if(checkCharacter(selectedChar)) {
                 System.out.println("Found " + selectedChar);
+                correctGuess(selectedChar);
                 ps.hideKey(selectedChar);
                 guessesToWin--;
                 selectedChar = ' ';
@@ -121,6 +141,10 @@ public class HangMan implements Runnable{
     
     public String getSelectedWord(){
         return selectedWord;
+    }
+    
+    public String getHiddenWord(){
+        return hiddenWord;
     }
     
     public int getScore(){

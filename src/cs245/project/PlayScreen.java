@@ -19,7 +19,8 @@ public class PlayScreen extends javax.swing.JFrame {
      * Creates new form PlayScreen
      */
     //Word player must guess
-    String Hidden_Word;
+    String selectedWord;
+    String hiddenWord;
     //will be used to check if letter is in word
     String[] wordArray;
     
@@ -70,9 +71,11 @@ public class PlayScreen extends javax.swing.JFrame {
         this.hangman = hangman;
         initComponents();        
         mapButtonToLetters();
-        this.Hidden_Word = hangman.getSelectedWord();
-        wordArray = Hidden_Word.split("");
-        System.out.print(Hidden_Word);
+        this.selectedWord = hangman.getSelectedWord();
+        wordArray = selectedWord.split("");
+        hiddenWord = hangman.getHiddenWord();
+        updateHiddenWord(hiddenWord);
+        System.out.print(selectedWord);
         currentTime();
     }
 
@@ -99,6 +102,12 @@ public class PlayScreen extends javax.swing.JFrame {
                 }
         };
         clock.start();
+    }
+    
+    public void updateHiddenWord(String word){
+        hiddenWord = word;
+        word = word.replace("", " ").trim();
+        hiddenWordLabel.setText(word);
     }
 
     /**
@@ -137,6 +146,7 @@ public class PlayScreen extends javax.swing.JFrame {
         H = new javax.swing.JButton();
         S = new javax.swing.JButton();
         T = new javax.swing.JButton();
+        hiddenWordLabel = new javax.swing.JLabel();
         Clock = new javax.swing.JLabel();
         gameScore = new javax.swing.JLabel();
         Image = new javax.swing.JLabel();
@@ -389,11 +399,20 @@ public class PlayScreen extends javax.swing.JFrame {
         getContentPane().add(T);
         T.setBounds(50, 280, 50, 23);
 
+        hiddenWordLabel.setBackground(new java.awt.Color(255, 255, 255));
+        hiddenWordLabel.setForeground(new java.awt.Color(204, 0, 0));
+        hiddenWordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hiddenWordLabel.setOpaque(true);
+        getContentPane().add(hiddenWordLabel);
+        hiddenWordLabel.setBounds(100, 0, 260, 30);
+
         Clock.setForeground(new java.awt.Color(204, 0, 0));
         Clock.setText("TEXT");
         getContentPane().add(Clock);
         Clock.setBounds(380, 0, 68, 14);
 
+        gameScore.setBackground(new java.awt.Color(255, 255, 255));
+        gameScore.setOpaque(true);
         gameScore.setForeground(new java.awt.Color(204, 0, 0));
         gameScore.setText("Score: 100");
         getContentPane().add(gameScore);
@@ -648,5 +667,6 @@ public class PlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton Z;
     private javax.swing.JLabel button_background;
     public javax.swing.JLabel gameScore;
+    private javax.swing.JLabel hiddenWordLabel;
     // End of variables declaration//GEN-END:variables
 }
