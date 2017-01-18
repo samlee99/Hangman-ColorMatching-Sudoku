@@ -80,16 +80,17 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Play);
-        Play.setBounds(10, 240, 83, 23);
+        Play.setBounds(70, 350, 83, 23);
 
         High_Score.setText("High Score");
+        High_Score.setToolTipText("");
         High_Score.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 High_ScoreActionPerformed(evt);
             }
         });
         getContentPane().add(High_Score);
-        High_Score.setBounds(110, 240, 83, 23);
+        High_Score.setBounds(200, 350, 83, 23);
 
         Credits.setText("Credits");
         Credits.addActionListener(new java.awt.event.ActionListener() {
@@ -98,17 +99,17 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Credits);
-        Credits.setBounds(210, 240, 83, 23);
+        Credits.setBounds(330, 350, 83, 23);
 
         Clock.setForeground(new java.awt.Color(153, 0, 0));
         Clock.setText("TIME");
         getContentPane().add(Clock);
-        Clock.setBounds(320, 10, 60, 20);
+        Clock.setBounds(460, 20, 70, 20);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Add Icon image here");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 70, 120, 90);
+        jLabel1.setBounds(60, 140, 120, 90);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -123,14 +124,11 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(20, 30, 360, 20);
 
-        dark_trooper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/star-wars-backgrounds.jpg"))); // NOI18N
-        dark_trooper.setMaximumSize(new java.awt.Dimension(600, 400));
-        dark_trooper.setMinimumSize(new java.awt.Dimension(600, 400));
-        dark_trooper.setPreferredSize(new java.awt.Dimension(600, 400));
+        dark_trooper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/star-wars-backgrounds.png"))); // NOI18N
         getContentPane().add(dark_trooper);
-        dark_trooper.setBounds(0, 0, 400, 300);
+        dark_trooper.setBounds(0, 0, 600, 400);
 
-        setSize(new java.awt.Dimension(416, 339));
+        setSize(new java.awt.Dimension(616, 439));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -155,13 +153,19 @@ public class MainMenu extends javax.swing.JFrame {
     private void High_ScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_High_ScoreActionPerformed
         // TODO add your handling code here:
         HighScoreScreen highScore = new HighScoreScreen();
+        MainMenu menu = new MainMenu();
+        menu.setVisible(false);
         highScore.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_High_ScoreActionPerformed
 
     private void CreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditsActionPerformed
         // TODO add your handling code here:
+        MainMenu menu = new MainMenu();
         CreditsScreen credits = new CreditsScreen();
+        menu.setVisible(false);
         credits.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CreditsActionPerformed
 
     /**

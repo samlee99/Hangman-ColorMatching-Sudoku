@@ -118,7 +118,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Serif" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Sam Lee, 009501037"/>
+        <Property name="text" type="java.lang.String" value="Steven Mai, 009593233"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">

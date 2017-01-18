@@ -53,7 +53,7 @@ public class CreditsScreen extends javax.swing.JFrame {
         jLabel5.setText("Joshua Ludwig, 009725534");
 
         jLabel6.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel6.setText("Sam Lee, 009501037");
+        jLabel6.setText("Steven Mai, 009593233");
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +112,8 @@ public class CreditsScreen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        MainMenu menu = new MainMenu();
+        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
