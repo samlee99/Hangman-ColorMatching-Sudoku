@@ -32,7 +32,8 @@ public class Splash {
     static Rectangle2D.Double splashTitleSpace, splashNameSpace;
     static Font titleFont, nameFont;
 
-    //This method creates the text on the splash screen
+	// method: splashInit
+    // purpose: This method creates the text on the splash screen
         public static void splashInit() {
             int height, width;
             splash = SplashScreen.getSplashScreen();
@@ -56,7 +57,8 @@ public class Splash {
 
 
         }
-        //This method displays the game name on the splash screen
+		// method: splashTitleText
+        // purpose: This method displays the game name on the splash screen
         public static void splashTitleText(String str){
             if (splash != null && splash.isVisible()) {
                 splashTitle.setPaint(Color.YELLOW);
@@ -65,7 +67,8 @@ public class Splash {
 
             }
         }
-        //This method displays the team name on the splash screen
+		// method: splashNameText
+        // purpose: This method displays the team name on the splash screen
         public static void splashNameText(String str){
             if (splash != null && splash.isVisible()) {
                 splashName.setPaint(Color.YELLOW);

@@ -38,7 +38,10 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
         currentTime();
     }
-
+	
+	// method: currentTime
+	// purpose: This method will generate and display the current time
+	// on the main menu
     public void currentTime() {
         Thread clock = new Thread()
         {
@@ -63,7 +66,7 @@ public class MainMenu extends javax.swing.JFrame {
         };
         clock.start();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -180,9 +183,8 @@ public class MainMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_CreditsActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+	// method: Main
+	// purpose: initialized teh splashscreen then creates the main menu screen
     public static void main(String args[]) {
         splashInit();
 

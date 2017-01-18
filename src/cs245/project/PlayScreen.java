@@ -39,11 +39,13 @@ public class PlayScreen extends javax.swing.JFrame {
     HangMan hangman;
     HashMap<Character, javax.swing.JButton> letterButtonMap  = new HashMap<>(); 
     
-    
+    // method: PlayScreen constructor
+	// purpose: the default constructor
     public PlayScreen() {
         initComponents();
     }
-    
+    // method: mapButtonToLetters
+	// purpose: Maps a charcter to a jButton to be used by other methods; such as hideKey
     public void mapButtonToLetters(){
         letterButtonMap.put('U',U);
         letterButtonMap.put('V',V);
@@ -72,13 +74,20 @@ public class PlayScreen extends javax.swing.JFrame {
         letterButtonMap.put('S',S);
         letterButtonMap.put('T',T);    
     }
-    
+    // method: hidKey
+	// parameter: character that should be hidden
+	// purpose: allows outside classes to be able to hide the jButton key
+	// on the gui
     public void hideKey(Character letter){
         System.out.println(letter);
         System.out.println(letterButtonMap.containsKey(letter));
         letterButtonMap.get(letter).setVisible(false);
     }
-    //constructor that will be used in game
+	// method: PlayScreen Constructor
+	// parameter: the HangMan class that has been created
+    // purpose: the main constructor that will be used in game. It retrieves
+	// the randomly selected word from the hangman class and sets up the hidden
+	// word lines
     public PlayScreen(HangMan hangman) {
         this.hangman = hangman;
         initComponents();        
@@ -90,7 +99,9 @@ public class PlayScreen extends javax.swing.JFrame {
         System.out.print(selectedWord);
         currentTime();
     }
-
+	// method: currentTime
+	// purpose: This method will generate and display the current time
+	// on the game screen
     public void currentTime() {
         Thread clock = new Thread()
         {
@@ -115,7 +126,10 @@ public class PlayScreen extends javax.swing.JFrame {
         };
         clock.start();
     }
-    
+    // method: updateHiddenWord
+	// parameter: string that we will use to update the hidden word field
+	// purpose: changes the hidden word to show the user's correct guess,
+	// otherwise it starts out with all underscores
     public void updateHiddenWord(String word){
         hiddenWord = word;
         word = word.replace("", " ").trim();
