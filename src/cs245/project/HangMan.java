@@ -1,3 +1,16 @@
+/***************************************************************
+* file: HangMan.java
+* author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+* class: CS 245 – Programming Graphical User Interfaces
+*
+* assignment: Project v1.0
+* date last modified: 1/18/2017
+*
+* purpose: This file is for the actual HangMan game where the user
+* will play the game.  The user's score will be displayed on the high
+* scores screen.
+*
+****************************************************************/ 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
