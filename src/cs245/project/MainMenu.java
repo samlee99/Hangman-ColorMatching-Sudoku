@@ -80,9 +80,9 @@ public class MainMenu extends javax.swing.JFrame {
         High_Score = new javax.swing.JButton();
         Credits = new javax.swing.JButton();
         Clock = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        icon = new javax.swing.JLabel();
         dark_trooper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,11 +121,6 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().add(Clock);
         Clock.setBounds(460, 20, 70, 20);
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Add Icon image here");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 140, 120, 90);
-
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Your escort has DIED, ");
@@ -138,6 +133,11 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel3.setText("guess the extraction codeword to escape the trooper");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(20, 30, 360, 20);
+
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/icon.png"))); // NOI18N
+        icon.setText("jLabel1");
+        getContentPane().add(icon);
+        icon.setBounds(130, 90, 220, 220);
 
         dark_trooper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/star-wars-backgrounds.png"))); // NOI18N
         getContentPane().add(dark_trooper);
@@ -208,7 +208,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton High_Score;
     private javax.swing.JButton Play;
     private javax.swing.JLabel dark_trooper;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel icon;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

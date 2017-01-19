@@ -21,13 +21,15 @@ package cs245.project;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
  *	
  * @author amnipp
  */
-public class HangMan implements Runnable{
+public class HangMan extends BaseGame{
     private final String[] WORD_LIST = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
     private boolean running;
     private String selectedWord;
@@ -43,10 +45,15 @@ public class HangMan implements Runnable{
     private int guessesToWin = 10;
     private final int guessesToLose = 7;
     
+    public HangMan(){
+        super("HangMan");
+    }
+    
 	// method: initGame
 	// purpose: initializes all private fields, selects a word at random
 	// creates the hiddenWord and fills it with underscores
-    private void initGame(){
+    @Override
+    protected void initGame(){
         running = true;
         score = 100;
         selectedChar = ' ';
@@ -103,10 +110,15 @@ public class HangMan implements Runnable{
 	// purpose: the internal game loop which holds all the logic for the game
 	// It checks if the player guessed correctly and updates the screen, it also
 	// updates the score. 
-    private void gameLoop() throws InterruptedException {
+    @Override
+    protected void gameLoop(){
         while(running){
             while(selectedChar == ' ' && running == true){
-                Thread.sleep(100);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(HangMan.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }            
             if(checkCharacter(selectedChar)) {
                 System.out.println("Found " + selectedChar);
@@ -120,14 +132,18 @@ public class HangMan implements Runnable{
                 selectedChar = ' ';
                 badGuess += 1;
                 changeImage(badGuess);
-                changeScore();
+                changeScore(-10);
             }
             if(guessesToWin == 0){
                 loadEndPage(score);
                 ps.dispose();
             }
             else if (badGuess == guessesToLose){
-                Thread.sleep(1000);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(HangMan.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 loadEndPage(0);
                 ps.dispose();
             }
@@ -135,9 +151,9 @@ public class HangMan implements Runnable{
     }
     // method: changeScore
 	// purpose: updates the score when the player has an incorrect guess
-    public void changeScore()
+    public void changeScore(int change)
     {
-        score -= 10;
+        score += change;
         ps.gameScore.setText("Score: " + score);
     }
     // method: changeImage
@@ -194,26 +210,5 @@ public class HangMan implements Runnable{
 	// purpose: gets the score
     public int getScore(){
         return score;
-    }
-	
-	// method: run
-	// purpose: used for multi-threading in order to allow the gameloop to not
-	// freeze the GUI
-    @Override
-    public void run() {
-        try{
-            initGame();
-            gameLoop();
-        }catch(InterruptedException e){
-            System.out.println("Interrupted Thread!");
-        }
-    }
-    // method: start
-	// purpose: creates a new thread and starts it
-    public void start() {
-        if(t == null) {
-            t = new Thread(this, threadName);
-            t.start();
-        }
     }
 }
