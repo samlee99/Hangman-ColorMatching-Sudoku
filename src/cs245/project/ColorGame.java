@@ -17,8 +17,7 @@ import java.util.logging.Logger;
 public class ColorGame extends BaseGame {
     private boolean running = true;
     private String selectedColor = "";
-    private int score;
-    private final String[] COLORS = {"red", "yello", "green", "blue", "purple"};
+    private final String[] COLORS = {"red", "yellow", "green", "blue", "purple"};
     Random r = new Random();
     ColorGameGUI cgGUI;
     
@@ -27,7 +26,6 @@ public class ColorGame extends BaseGame {
     }    
     @Override
     protected void initGame() {
-        score = 0;
         int randIndex = new Random().nextInt(COLORS.length);
         selectedColor = COLORS[randIndex];
     }
@@ -48,24 +46,36 @@ public class ColorGame extends BaseGame {
         changeColor(color);
         int colorNum = r.nextInt(5);
         changeName(colorNum);
-        this.score = score;
-        cgGUI.Color_Label.setText("Your Score: "  + score);
+        setScore(score);
+        cgGUI.Color_Label.setText("Your Score: "  + getScore());
+        cgGUI.initRandomColors();
     }
     
     public void changeColor(int num)
     {
-        if(num == 1)
-        cgGUI.Color_Label.setForeground(Color.blue);
-        else if(num == 2)
-        cgGUI.Color_Label.setForeground(Color.red);
-        else if(num == 3)
-        cgGUI.Color_Label.setForeground(Color.green);
-        else if(num == 4)
-        cgGUI.Color_Label.setForeground(Color.pink);
-        else if(num == 5)
-        cgGUI.Color_Label.setForeground(Color.yellow);
+        switch (num) {
+            case 1:
+                cgGUI.Color_Label.setForeground(Color.blue);
+                break;
+            case 2:
+                cgGUI.Color_Label.setForeground(Color.red);
+                break;
+            case 3:
+                cgGUI.Color_Label.setForeground(Color.green);
+                break;
+            case 4:
+                cgGUI.Color_Label.setForeground(Color.pink);
+                break;
+            case 5:
+                cgGUI.Color_Label.setForeground(Color.yellow);
+                break;
+            default:
+                break;
+        }
     }
-    
+    public String[] getColorList(){
+        return COLORS;
+    }
     public void changeName(int num)
     {
         cgGUI.Color_Label.setText(COLORS[num]);
