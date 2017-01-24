@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 public class ColorGame extends BaseGame {
     private boolean running = true;
     private String selectedColor = "";
+    private String guessedColor = "";
     private final String[] COLORS = {"red", "yellow", "green", "blue", "purple"};
     Random r = new Random();
     ColorGameGUI cgGUI;
@@ -84,14 +85,24 @@ public class ColorGame extends BaseGame {
     @Override
     protected void gameLoop() {
         while(running) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+            while(guessedColor.equals("") && running == true){
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
             }
         }
     }
 
+    public boolean checkColor(String guess){
+        if (guess.equals(selectedColor)){
+            return true;
+        }
+        return false;
+    }
+    
     public String getColor(){
         return selectedColor;
     }

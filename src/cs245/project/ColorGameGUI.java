@@ -121,6 +121,12 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 99, 38));
         getContentPane().add(colorBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 100, 40));
         getContentPane().add(colorBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 100, 40));
+
+        colorBtn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorBtn5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(colorBtn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 100, 40));
 
         pack();
@@ -135,6 +141,10 @@ public class ColorGameGUI extends javax.swing.JFrame {
         cg.changeName(colorNum);*/
 
     }//GEN-LAST:event_colorBtn2ActionPerformed
+
+    private void colorBtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorBtn5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colorBtn5ActionPerformed
 
     /**
      * @param args the command line arguments

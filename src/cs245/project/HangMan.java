@@ -40,6 +40,7 @@ public class HangMan extends BaseGame{
     private Thread t;
     private String threadName = "hangman";
     HighScoreScreen hs = new HighScoreScreen();
+    ColorGame cg;
     ColorGameGUI cgGUI;
     private PlayScreen ps;
     private int badGuess = 1;
@@ -137,7 +138,7 @@ public class HangMan extends BaseGame{
                 ps.gameScore.setText("Score: " + getScore());
             }
             if(guessesToWin == 0){
-                loadEndPage(getScore());
+                loadColorPage(getScore());
                 ps.dispose();
             }
             else if (badGuess == guessesToLose){
@@ -179,6 +180,15 @@ public class HangMan extends BaseGame{
         hs.End.setVisible(true);
         hs.Player_Score.setVisible(true);
         hs.Player_Score.setText("Your Score: " + realScore);
+    }
+    
+    public void loadColorPage(int realScore)
+    {
+        cg = new ColorGame();
+        cgGUI = new ColorGameGUI();
+        cgGUI.setColorGame(cg);
+        // TODO add your handling code here:
+        cg.loadColorPage(getScore(),cgGUI);        
     }
     
 	// method: selectCharacter
