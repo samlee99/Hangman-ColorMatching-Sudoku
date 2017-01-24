@@ -36,7 +36,7 @@ public class HangMan extends BaseGame{
     private String hiddenWord;
     private char selectedChar;
     private int attempt;
-    public int score = 100;
+    //public int score = 100;
     private Thread t;
     private String threadName = "hangman";
     HighScoreScreen hs = new HighScoreScreen();
@@ -56,7 +56,7 @@ public class HangMan extends BaseGame{
     @Override
     protected void initGame(){
         running = true;
-        score = 100;
+        setScore(100);
         selectedChar = ' ';
         //Select a word
         int randIndex = new Random().nextInt(WORD_LIST.length);
@@ -133,10 +133,11 @@ public class HangMan extends BaseGame{
                 selectedChar = ' ';
                 badGuess += 1;
                 changeImage(badGuess);
-                changeScore(-10);
+                modifyScore(-10);
+                ps.gameScore.setText("Score: " + getScore());
             }
             if(guessesToWin == 0){
-                loadEndPage(score);
+                loadEndPage(getScore());
                 ps.dispose();
             }
             else if (badGuess == guessesToLose){
@@ -152,11 +153,11 @@ public class HangMan extends BaseGame{
     }
     // method: changeScore
 	// purpose: updates the score when the player has an incorrect guess
-    public void changeScore(int change)
+   /* public void changeScore(int change)
     {
         score += change;
         ps.gameScore.setText("Score: " + score);
-    }
+    }*/
     // method: changeImage
 	// parameter: the number of incorrect guesses
 	// purpose: updates the "hanged man" with the latest image
@@ -210,7 +211,7 @@ public class HangMan extends BaseGame{
     }
     // method: getScore
 	// purpose: gets the score
-    public int getScore(){
+    /*public int getScore(){
         return score;
-    }
+    }*/
 }

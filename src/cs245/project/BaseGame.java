@@ -31,7 +31,15 @@ public class BaseGame implements Runnable{
         gameLoop();
     };
 
-    
+    public void setScore(int score){
+        this.score = score;
+    }
+    public int getScore(){
+        return score;
+    }
+    public void modifyScore(int score){
+        this.score += score;
+    }
     @Override
     public void run() {
         startGame();

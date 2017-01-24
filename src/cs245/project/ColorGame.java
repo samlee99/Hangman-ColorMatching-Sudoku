@@ -21,7 +21,6 @@ public class ColorGame extends BaseGame {
     private final String[] COLORS = {"red", "yello", "green", "blue", "purple"};
     Random r = new Random();
     ColorGameGUI cgGUI;
-    HangMan hangman;
     
     public ColorGame(){
         super("ColorGame");
@@ -33,9 +32,11 @@ public class ColorGame extends BaseGame {
         selectedColor = COLORS[randIndex];
     }
     
-    public void loadColorPage()
+    public void loadColorPage(int score, ColorGameGUI cgGUI)
     {
-        this.score = hangman.score;
+        this.cgGUI = cgGUI;
+        setScore(score);
+       // this.score = hangman.score;
         setColorGameGUI(score);
         cgGUI.setVisible(true);
         
@@ -80,9 +81,7 @@ public class ColorGame extends BaseGame {
             }
         }
     }
-    public int getScore(){
-        return score;
-    }
+
     public String getColor(){
         return selectedColor;
     }
