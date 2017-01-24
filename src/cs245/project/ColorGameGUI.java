@@ -124,6 +124,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorBtn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 100, 40));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void colorBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorBtn2ActionPerformed
