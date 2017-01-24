@@ -36,10 +36,11 @@ public class HangMan extends BaseGame{
     private String hiddenWord;
     private char selectedChar;
     private int attempt;
-    private int score = 100;
+    public int score = 100;
     private Thread t;
     private String threadName = "hangman";
     HighScoreScreen hs = new HighScoreScreen();
+    ColorGameGUI cgGUI;
     private PlayScreen ps;
     private int badGuess = 1;
     private int guessesToWin = 10;
@@ -178,6 +179,7 @@ public class HangMan extends BaseGame{
         hs.Player_Score.setVisible(true);
         hs.Player_Score.setText("Your Score: " + realScore);
     }
+    
 	// method: selectCharacter
 	// parameter: selected char
 	// purpose: Updates the selected character with the latest choice

@@ -35,7 +35,7 @@ public class PlayScreen extends javax.swing.JFrame {
     String hiddenWord;
     //will be used to check if letter is in word
     String[] wordArray;
-    
+    ColorGame cg;
     HangMan hangman;
     HashMap<Character, javax.swing.JButton> letterButtonMap  = new HashMap<>(); 
     
@@ -613,7 +613,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void SkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipActionPerformed
         // TODO add your handling code here:
-        hangman.loadEndPage(0);
+        cg.loadColorPage();
         this.dispose();
     }//GEN-LAST:event_SkipActionPerformed
 
