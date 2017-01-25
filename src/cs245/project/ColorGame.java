@@ -1,3 +1,16 @@
+/***************************************************************
+* file: HighScoreScreen.java
+* author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+* class: CS 245 – Programming Graphical User Interfaces
+*
+* assignment: Project v1.1
+* date last modified: 1/25/2017
+*
+* purpose: This is the color game file.  Colors are randomized and user clicks
+* the button to match.  The score is displayed at the end.
+* 
+*
+****************************************************************/ 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,6 +35,7 @@ public class ColorGame extends BaseGame {
     private int round = 0;
     Random r = new Random();
     ColorGameGUI cgGUI;
+    HighScoreTracker hsTrack = new HighScoreTracker();
     HighScoreScreen hs = new HighScoreScreen();
     
     public ColorGame(){
@@ -32,7 +46,8 @@ public class ColorGame extends BaseGame {
         int randIndex = new Random().nextInt(COLORS.length);
         selectedColor = COLORS[randIndex];
     }
-    
+        // loadColorPage
+	// purpose: this loads the color game page and continues the score counter
     public void loadColorPage(int score, ColorGameGUI cgGUI)
     {
         this.cgGUI = cgGUI;
@@ -42,7 +57,10 @@ public class ColorGame extends BaseGame {
         cgGUI.setVisible(true);
         
     }
-    
+            	// method: setColorGameGUI
+	// purpose: this pushes the randomly selected color into the change color method
+        // and randomly assigns the color text.  It also contains the score and 
+        //starts the random colors in the gui.
     public void setColorGameGUI(int score)
     {
         //int color = r.nextInt(5);
@@ -55,7 +73,8 @@ public class ColorGame extends BaseGame {
         cgGUI.getScoreLabel().setText("Your Score: "  + getScore());
         cgGUI.initRandomColors();
     }
-    
+        	// method: changeColor
+	// purpose: this method assigns colors to the color text 
     public void changeColor(String color)
     {
         switch (color) {
@@ -78,19 +97,28 @@ public class ColorGame extends BaseGame {
                 break;
         }
     }
+        	// method: getColorList
+	// purpose: returns the string array of colors
     public String[] getColorList(){
         return COLORS;
     }
+    	// method: changeName
+	// purpose: changes the name of the color
     public void changeName(int num)
     {
         cgGUI.getColorLabel().setText(COLORS[num]);
     }
-    
+        	// method: setGuessedColor
+	// purpose: this method sets the guessed color
     public void setGuessedColor(String color){
         guessedColor = color;
     }
     
     @Override
+	// method: gameLoop
+	// purpose: this contains game logic. If you guess correctly,
+	// your score increases by 100 and if you don't it remains the same 
+	// The rounds increase as you click.
     protected void gameLoop() {
         while(running && round < 5) {
             while(guessedColor.equals("") && running == true){
@@ -115,18 +143,22 @@ public class ColorGame extends BaseGame {
         }
         showEndScreen(getScore());
     }
-    
+    // method: showEndScreen
+        // purpose: revealst the end screen when finished with run through
     private void showEndScreen(int finalScore){
 //        System.out.println("GAME OVER");
-        hs.setVisible(true);
         hs.setPlayerScore(finalScore);
+        hsTrack.addScore(finalScore);
+        hs = new HighScoreScreen();
+        hs.setVisible(true);
         hs.Back.setVisible(false);
         hs.End.setVisible(true);
         hs.Player_Score.setVisible(true);
         hs.Player_Score.setText("Your Score: " + finalScore);
         cgGUI.dispose();
     }
-    
+        // method: getColor
+	// purpose: retrieves the color from the colors string array
     public String getColor(){
         return selectedColor;
     }

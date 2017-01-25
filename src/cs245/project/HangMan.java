@@ -3,8 +3,8 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
-* date last modified: 1/18/2017
+* assignment: Project v1.1
+* date last modified: 1/25/2017
 *
 * purpose: This file is for the actual HangMan game where the user
 * will play the game.  The user's score will be displayed on the high
@@ -182,7 +182,8 @@ public class HangMan extends BaseGame{
         hs.Player_Score.setVisible(true);
         hs.Player_Score.setText("Your Score: " + realScore);*/
     }
-    
+        // method: loadColorPage
+            // purpose: this loads up the color page
     public void loadColorPage(int realScore)
     {
         cg = new ColorGame();
