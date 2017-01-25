@@ -6,8 +6,8 @@
 * assignment: Project v1.1
 * date last modified: 1/25/2017
 *
-* purpose: This is the color game file.  Colors are randomized and user clicks
-* the button to match.  The score is displayed at the end.
+* purpose: This is the color game GUI file. It deals with displaying
+* the colors of the buttons, highlighting, and shapes.
 * 
 *
 ****************************************************************/ 
