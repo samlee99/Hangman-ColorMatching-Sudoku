@@ -250,7 +250,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
     private javax.swing.JButton colorBtn4;
     private javax.swing.JButton colorBtn5;
     private javax.swing.JLabel colorLabel;
-    private javax.swing.JLabel scoreLabel;
+    public javax.swing.JLabel scoreLabel;
     // End of variables declaration//GEN-END:variables
 
     private class RoundedButton extends JButton {

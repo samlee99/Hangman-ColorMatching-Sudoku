@@ -22,6 +22,7 @@ public class ColorGame extends BaseGame {
     private int round = 0;
     Random r = new Random();
     ColorGameGUI cgGUI;
+    HighScoreScreen hs = new HighScoreScreen();
     
     public ColorGame(){
         super("ColorGame");
@@ -101,7 +102,8 @@ public class ColorGame extends BaseGame {
             }
             System.out.println(selectedColor + " - " + guessedColor);
             if(guessedColor.equals(selectedColor)){
-                setScore(100);              
+                setScore(getScore()+100);
+                cgGUI.scoreLabel.setText("Your Score: " + getScore());
             }
             int randIndex = new Random().nextInt(COLORS.length);
             selectedColor = COLORS[randIndex];
@@ -111,11 +113,18 @@ public class ColorGame extends BaseGame {
             guessedColor = "";
             round++;
         }
-        showEndScreen();
+        showEndScreen(getScore());
     }
     
-    private void showEndScreen(){
-        System.out.println("GAME OVER");
+    private void showEndScreen(int finalScore){
+//        System.out.println("GAME OVER");
+        hs.setVisible(true);
+        hs.setPlayerScore(finalScore);
+        hs.Back.setVisible(false);
+        hs.End.setVisible(true);
+        hs.Player_Score.setVisible(true);
+        hs.Player_Score.setText("Your Score: " + finalScore);
+        cgGUI.dispose();
     }
     
     public String getColor(){
