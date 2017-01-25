@@ -174,17 +174,19 @@ public class HangMan extends BaseGame{
 	// purpose: loads the end game page
     public void loadEndPage(int realScore)
     {
-        hs.setVisible(true);
+        loadColorPage(realScore);
+        /*hs.setVisible(true);
         hs.setPlayerScore(realScore);
         hs.Back.setVisible(false);
         hs.End.setVisible(true);
         hs.Player_Score.setVisible(true);
-        hs.Player_Score.setText("Your Score: " + realScore);
+        hs.Player_Score.setText("Your Score: " + realScore);*/
     }
     
     public void loadColorPage(int realScore)
     {
         cg = new ColorGame();
+        cg.start();
         cgGUI = new ColorGameGUI();
         cgGUI.setColorGame(cg);
         // TODO add your handling code here:

@@ -19,6 +19,7 @@ public class ColorGame extends BaseGame {
     private String selectedColor = "";
     private String guessedColor = "";
     private final String[] COLORS = {"red", "yellow", "green", "blue", "purple"};
+    private int round = 0;
     Random r = new Random();
     ColorGameGUI cgGUI;
     
@@ -43,32 +44,34 @@ public class ColorGame extends BaseGame {
     
     public void setColorGameGUI(int score)
     {
-        int color = r.nextInt(5) + 1;
-        changeColor(color);
+        //int color = r.nextInt(5);
+        changeColor(selectedColor);
+        
         int colorNum = r.nextInt(5);
         changeName(colorNum);
+        
         setScore(score);
-        cgGUI.Color_Label.setText("Your Score: "  + getScore());
+        cgGUI.getScoreLabel().setText("Your Score: "  + getScore());
         cgGUI.initRandomColors();
     }
     
-    public void changeColor(int num)
+    public void changeColor(String color)
     {
-        switch (num) {
-            case 1:
-                cgGUI.Color_Label.setForeground(Color.blue);
+        switch (color) {
+            case "red":
+                cgGUI.getColorLabel().setForeground(Color.red);
                 break;
-            case 2:
-                cgGUI.Color_Label.setForeground(Color.red);
+            case "yellow":
+                cgGUI.getColorLabel().setForeground(Color.yellow);
                 break;
-            case 3:
-                cgGUI.Color_Label.setForeground(Color.green);
+            case "green":
+                cgGUI.getColorLabel().setForeground(Color.green);
                 break;
-            case 4:
-                cgGUI.Color_Label.setForeground(Color.pink);
+            case "blue":
+                cgGUI.getColorLabel().setForeground(Color.blue);
                 break;
-            case 5:
-                cgGUI.Color_Label.setForeground(Color.yellow);
+            case "purple":
+                cgGUI.getColorLabel().setForeground(new Color(255,0,255));
                 break;
             default:
                 break;
@@ -79,28 +82,40 @@ public class ColorGame extends BaseGame {
     }
     public void changeName(int num)
     {
-        cgGUI.Color_Label.setText(COLORS[num]);
+        cgGUI.getColorLabel().setText(COLORS[num]);
     }
-
+    
+    public void setGuessedColor(String color){
+        guessedColor = color;
+    }
+    
     @Override
     protected void gameLoop() {
-        while(running) {
+        while(running && round < 5) {
             while(guessedColor.equals("") && running == true){
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(ColorGame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
+            System.out.println(selectedColor + " - " + guessedColor);
+            if(guessedColor.equals(selectedColor)){
+                setScore(100);              
+            }
+            int randIndex = new Random().nextInt(COLORS.length);
+            selectedColor = COLORS[randIndex];
+            changeColor(selectedColor);
+            int colorNum = r.nextInt(5);
+            changeName(colorNum); 
+            guessedColor = "";
+            round++;
         }
+        showEndScreen();
     }
-
-    public boolean checkColor(String guess){
-        if (guess.equals(selectedColor)){
-            return true;
-        }
-        return false;
+    
+    private void showEndScreen(){
+        System.out.println("GAME OVER");
     }
     
     public String getColor(){

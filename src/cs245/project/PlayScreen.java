@@ -613,8 +613,10 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void SkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipActionPerformed
         cg = new ColorGame();
+        cg.start();
         ColorGameGUI cgGUI = new ColorGameGUI();
         cgGUI.setColorGame(cg);
+        hangman.setScore(0);
         // TODO add your handling code here:
         cg.loadColorPage(hangman.getScore(),cgGUI);
         this.dispose();
