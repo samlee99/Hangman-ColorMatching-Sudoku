@@ -276,7 +276,9 @@ public class ColorGameGUI extends javax.swing.JFrame {
             setContentAreaFilled(false);
         }
         @Override
-
+    //method: paintComponent
+    //purpose: this checks if the mouse if the mouse is over the button and it'll
+    //darken the button to highlight it.
         protected void paintComponent(Graphics graphic){
             if(getModel().isArmed()){
                 Color color = getBackground();
@@ -294,12 +296,17 @@ public class ColorGameGUI extends javax.swing.JFrame {
             super.paintComponent(graphic);
         }
         @Override
+     //method: paintBorder
+    //purpose: this paints the border of the buttons
         protected void paintBorder(Graphics graphic){
             graphic.setColor(getForeground());
             graphic.drawOval(0, 0, getSize().width-1, getSize().height-1);
         }
         Shape shape;
         @Override
+                    //method: contains
+    //purpose: this makes checks if the buttons are within the bounds
+    //if not, it'll give the correct bounds for mouse processing
         public boolean contains(int x,int y){
             if(shape == null || !shape.getBounds().equals(getBounds())){
                 shape = new Ellipse2D.Float(0,0,getWidth(),getHeight());
