@@ -24,7 +24,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-112,0,0,2,88"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-65,0,0,2,88"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -81,8 +81,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="r7_1" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="r7_2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
@@ -94,9 +93,9 @@
                       <Component id="r8_3" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="r9_1" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="r9_2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="r9_3" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="r9_3" pref="38" max="32767" attributes="0"/>
+                      <Component id="r9_2" pref="38" max="32767" attributes="0"/>
+                      <Component id="r9_1" alignment="0" pref="38" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -177,21 +176,21 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r4_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r4_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r4_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="r5_7" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r5_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r5_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r5_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="r6_7" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r6_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r6_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r6_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -282,7 +281,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="370" y="260" width="-1" height="-1"/>
+          <AbsoluteConstraints x="370" y="260" width="120" height="120"/>
         </Constraint>
       </Constraints>
 
@@ -297,21 +296,21 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r7_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r7_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r7_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="r8_7" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r8_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r8_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r8_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="r9_7" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r9_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r9_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r9_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -319,8 +318,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="r7_7" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="r7_8" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
@@ -332,10 +330,11 @@
                       <Component id="r8_9" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="r9_7" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="r9_8" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="r9_9" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="r9_7" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="r9_8" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="r9_9" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -628,7 +627,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="250" y="260" width="-1" height="-1"/>
+          <AbsoluteConstraints x="250" y="260" width="-1" height="120"/>
         </Constraint>
       </Constraints>
 
@@ -637,7 +636,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="r7_4" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r7_5" min="-2" pref="40" max="-2" attributes="0"/>
@@ -651,7 +650,7 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r8_6" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="r9_4" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r9_5" min="-2" pref="40" max="-2" attributes="0"/>
@@ -665,8 +664,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="r7_4" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="r7_5" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
@@ -678,10 +676,11 @@
                       <Component id="r8_6" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="r9_4" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="r9_5" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="r9_6" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="r9_4" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="r9_5" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="r9_6" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -994,21 +993,21 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r1_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r1_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r1_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="r2_7" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r2_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r2_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r2_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="r3_7" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="r3_8" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="r3_9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="r3_9" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
