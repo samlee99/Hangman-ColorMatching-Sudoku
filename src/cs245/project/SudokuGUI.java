@@ -5,13 +5,25 @@
  */
 package cs245.project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Stebo
  */
 public class SudokuGUI extends javax.swing.JFrame {
 
-   Sudoku sg;
+    Sudoku sg;
+   
+    public void SudokuStart(Sudoku sg){
+        this.sg = sg;
+
+        
+        
+        
+        
+        
+    }
     public SudokuGUI() {
         initComponents();
     }
@@ -127,57 +139,115 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r9_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r9_1.setText("3");
         r9_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_1ActionPerformed(evt);
             }
         });
+        r9_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_1KeyTyped(evt);
+            }
+        });
 
+        r7_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r7_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_1ActionPerformed(evt);
             }
         });
+        r7_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_1KeyTyped(evt);
+            }
+        });
 
+        r8_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_2ActionPerformed(evt);
             }
         });
+        r8_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_2KeyTyped(evt);
+            }
+        });
 
+        r7_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r7_3.setText("2");
         r7_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_3ActionPerformed(evt);
             }
         });
+        r7_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_3KeyTyped(evt);
+            }
+        });
 
+        r9_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r9_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_3ActionPerformed(evt);
             }
         });
+        r9_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_3KeyTyped(evt);
+            }
+        });
 
+        r7_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r7_2.setText("5");
         r7_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_2ActionPerformed(evt);
             }
         });
+        r7_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_2KeyTyped(evt);
+            }
+        });
 
+        r8_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r8_3.setText("1");
         r8_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_3ActionPerformed(evt);
             }
         });
+        r8_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_3KeyTyped(evt);
+            }
+        });
 
+        r8_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_1ActionPerformed(evt);
             }
         });
+        r8_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_1KeyTyped(evt);
+            }
+        });
 
+        r9_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r9_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_2ActionPerformed(evt);
+            }
+        });
+        r9_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_2KeyTyped(evt);
             }
         });
 
@@ -218,10 +288,11 @@ public class SudokuGUI extends javax.swing.JFrame {
                     .addComponent(r8_1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(r8_2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(r8_3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(r9_3, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(r9_2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(r9_1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(r9_3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(r9_2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(r9_1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, 120));
@@ -229,57 +300,115 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r5_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_8ActionPerformed(evt);
             }
         });
+        r5_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_8KeyTyped(evt);
+            }
+        });
 
+        r6_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r6_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_8ActionPerformed(evt);
             }
         });
+        r6_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_8KeyTyped(evt);
+            }
+        });
 
+        r4_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r4_8.setText("8");
         r4_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_8ActionPerformed(evt);
             }
         });
+        r4_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_8KeyTyped(evt);
+            }
+        });
 
+        r5_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_9ActionPerformed(evt);
             }
         });
+        r5_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_9KeyTyped(evt);
+            }
+        });
 
+        r5_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_7ActionPerformed(evt);
             }
         });
+        r5_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_7KeyTyped(evt);
+            }
+        });
 
+        r6_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r6_9.setText("3");
         r6_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_9ActionPerformed(evt);
             }
         });
+        r6_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_9KeyTyped(evt);
+            }
+        });
 
+        r4_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r4_7.setText("7");
         r4_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_7ActionPerformed(evt);
             }
         });
+        r4_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_7KeyTyped(evt);
+            }
+        });
 
+        r6_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r6_7.setText("1");
         r6_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_7ActionPerformed(evt);
             }
         });
+        r6_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_7KeyTyped(evt);
+            }
+        });
 
+        r4_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r4_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_9ActionPerformed(evt);
+            }
+        });
+        r4_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_9KeyTyped(evt);
             }
         });
 
@@ -332,57 +461,113 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r7_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r7_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_9ActionPerformed(evt);
             }
         });
+        r7_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_9KeyTyped(evt);
+            }
+        });
 
+        r7_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r7_8.setText("9");
         r7_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_8ActionPerformed(evt);
             }
         });
+        r7_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_8KeyTyped(evt);
+            }
+        });
 
+        r9_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r9_9.setText("5");
         r9_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_9ActionPerformed(evt);
             }
         });
+        r9_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_9KeyTyped(evt);
+            }
+        });
 
+        r9_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r9_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_8ActionPerformed(evt);
             }
         });
+        r9_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_8KeyTyped(evt);
+            }
+        });
 
+        r8_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_7ActionPerformed(evt);
             }
         });
+        r8_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_7KeyTyped(evt);
+            }
+        });
 
+        r8_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_9ActionPerformed(evt);
             }
         });
+        r8_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_9KeyTyped(evt);
+            }
+        });
 
+        r9_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r9_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_7ActionPerformed(evt);
             }
         });
+        r9_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_7KeyTyped(evt);
+            }
+        });
 
+        r7_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r7_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_7ActionPerformed(evt);
             }
         });
+        r7_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_7KeyTyped(evt);
+            }
+        });
 
+        r8_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_8ActionPerformed(evt);
+            }
+        });
+        r8_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_8KeyTyped(evt);
             }
         });
 
@@ -435,57 +620,115 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r6_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r6_3.setText("8");
         r6_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_3ActionPerformed(evt);
             }
         });
+        r6_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_3KeyTyped(evt);
+            }
+        });
 
+        r4_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r4_1.setText("5");
         r4_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_1ActionPerformed(evt);
             }
         });
+        r4_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_1KeyTyped(evt);
+            }
+        });
 
+        r4_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r4_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_2ActionPerformed(evt);
             }
         });
+        r4_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_2KeyTyped(evt);
+            }
+        });
 
+        r4_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r4_3.setText("9");
         r4_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_3ActionPerformed(evt);
             }
         });
+        r4_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_3KeyTyped(evt);
+            }
+        });
 
+        r5_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_1ActionPerformed(evt);
             }
         });
+        r5_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_1KeyTyped(evt);
+            }
+        });
 
+        r5_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_2ActionPerformed(evt);
             }
         });
+        r5_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_2KeyTyped(evt);
+            }
+        });
 
+        r5_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_3ActionPerformed(evt);
             }
         });
+        r5_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_3KeyTyped(evt);
+            }
+        });
 
+        r6_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r6_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_1ActionPerformed(evt);
             }
         });
+        r6_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_1KeyTyped(evt);
+            }
+        });
 
+        r6_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r6_2.setText("4");
         r6_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_2ActionPerformed(evt);
+            }
+        });
+        r6_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_2KeyTyped(evt);
             }
         });
 
@@ -510,7 +753,9 @@ public class SudokuGUI extends javax.swing.JFrame {
                         .addComponent(r5_3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(r6_1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
                         .addComponent(r6_2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
                         .addComponent(r6_3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -536,39 +781,103 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r3_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r3_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_6ActionPerformed(evt);
             }
         });
+        r3_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_6KeyTyped(evt);
+            }
+        });
 
+        r2_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r2_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2_4ActionPerformed(evt);
             }
         });
+        r2_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_4KeyTyped(evt);
+            }
+        });
 
+        r1_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_5KeyTyped(evt);
+            }
+        });
+
+        r3_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r3_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_4ActionPerformed(evt);
             }
         });
+        r3_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_4KeyTyped(evt);
+            }
+        });
 
+        r2_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r2_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2_6ActionPerformed(evt);
             }
         });
+        r2_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_6KeyTyped(evt);
+            }
+        });
 
+        r2_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r2_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r2_5ActionPerformed(evt);
+            }
+        });
+        r2_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_5KeyTyped(evt);
+            }
+        });
+
+        r1_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_4.setText("4");
         r1_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r1_4ActionPerformed(evt);
             }
         });
+        r1_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_4KeyTyped(evt);
+            }
+        });
 
+        r3_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r3_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_5ActionPerformed(evt);
+            }
+        });
+        r3_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_5KeyTyped(evt);
+            }
+        });
+
+        r1_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_6.setText("6");
+        r1_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_6KeyTyped(evt);
             }
         });
 
@@ -621,57 +930,113 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r7_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r7_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_5ActionPerformed(evt);
             }
         });
+        r7_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_5KeyTyped(evt);
+            }
+        });
 
+        r8_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_5ActionPerformed(evt);
             }
         });
+        r8_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_5KeyTyped(evt);
+            }
+        });
 
+        r8_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_4ActionPerformed(evt);
             }
         });
+        r8_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_4KeyTyped(evt);
+            }
+        });
 
+        r7_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r7_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_4ActionPerformed(evt);
             }
         });
+        r7_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_4KeyTyped(evt);
+            }
+        });
 
+        r7_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r7_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r7_6ActionPerformed(evt);
             }
         });
+        r7_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r7_6KeyTyped(evt);
+            }
+        });
 
+        r9_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r9_4.setText("9");
         r9_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_4ActionPerformed(evt);
             }
         });
+        r9_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_4KeyTyped(evt);
+            }
+        });
 
+        r9_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r9_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_5ActionPerformed(evt);
             }
         });
+        r9_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_5KeyTyped(evt);
+            }
+        });
 
+        r9_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r9_6.setText("2");
         r9_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r9_6ActionPerformed(evt);
             }
         });
+        r9_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r9_6KeyTyped(evt);
+            }
+        });
 
+        r8_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r8_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r8_6ActionPerformed(evt);
+            }
+        });
+        r8_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r8_6KeyTyped(evt);
             }
         });
 
@@ -724,45 +1089,106 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel7.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r3_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r3_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_1ActionPerformed(evt);
             }
         });
+        r3_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_1KeyTyped(evt);
+            }
+        });
 
+        r1_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r1_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r1_2ActionPerformed(evt);
             }
         });
+        r1_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                r1_2KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_2KeyTyped(evt);
+            }
+        });
 
+        r2_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r2_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2_1ActionPerformed(evt);
             }
         });
+        r2_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_1KeyTyped(evt);
+            }
+        });
 
+        r1_1.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_1.setText("8");
         r1_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r1_1ActionPerformed(evt);
             }
         });
+        r1_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_1KeyTyped(evt);
+            }
+        });
 
+        r2_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r2_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_2KeyTyped(evt);
+            }
+        });
+
+        r3_2.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r3_2.setText("1");
         r3_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_2ActionPerformed(evt);
             }
         });
+        r3_2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_2KeyTyped(evt);
+            }
+        });
 
+        r3_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r3_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_3ActionPerformed(evt);
             }
         });
+        r3_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_3KeyTyped(evt);
+            }
+        });
 
+        r2_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r2_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2_3ActionPerformed(evt);
+            }
+        });
+        r2_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_3KeyTyped(evt);
+            }
+        });
+
+        r1_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_3KeyTyped(evt);
             }
         });
 
@@ -815,57 +1241,114 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel12.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r4_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r4_5.setText("3");
         r4_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_5ActionPerformed(evt);
             }
         });
+        r4_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_5KeyTyped(evt);
+            }
+        });
 
+        r5_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r5_5.setText("7");
         r5_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_5ActionPerformed(evt);
             }
         });
+        r5_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_5KeyTyped(evt);
+            }
+        });
 
+        r5_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_4ActionPerformed(evt);
             }
         });
+        r5_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_4KeyTyped(evt);
+            }
+        });
 
+        r4_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r4_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_6ActionPerformed(evt);
             }
         });
+        r4_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_6KeyTyped(evt);
+            }
+        });
 
+        r5_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r5_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r5_6ActionPerformed(evt);
             }
         });
+        r5_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r5_6KeyTyped(evt);
+            }
+        });
 
+        r6_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r6_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_4ActionPerformed(evt);
             }
         });
+        r6_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_4KeyTyped(evt);
+            }
+        });
 
+        r6_6.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r6_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_6ActionPerformed(evt);
             }
         });
+        r6_6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_6KeyTyped(evt);
+            }
+        });
 
+        r4_4.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r4_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4_4ActionPerformed(evt);
             }
         });
+        r4_4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r4_4KeyTyped(evt);
+            }
+        });
 
+        r6_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r6_5.setText("2");
         r6_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r6_5ActionPerformed(evt);
+            }
+        });
+        r6_5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r6_5KeyTyped(evt);
             }
         });
 
@@ -918,39 +1401,105 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel13.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r2_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r2_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_8KeyTyped(evt);
+            }
+        });
+
+        r1_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_8KeyTyped(evt);
+            }
+        });
+
+        r1_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r1_9.setText("7");
+        r1_9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r1_9ActionPerformed(evt);
+            }
+        });
+        r1_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_9KeyTyped(evt);
+            }
+        });
+
+        r3_8.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r3_8.setText("5");
         r3_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_8ActionPerformed(evt);
             }
         });
+        r3_8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_8KeyTyped(evt);
+            }
+        });
 
+        r2_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r2_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2_9ActionPerformed(evt);
             }
         });
+        r2_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_9KeyTyped(evt);
+            }
+        });
 
+        r1_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r1_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r1_7ActionPerformed(evt);
             }
         });
+        r1_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r1_7KeyTyped(evt);
+            }
+        });
 
+        r3_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r3_7.setText("6");
         r3_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_7ActionPerformed(evt);
             }
         });
+        r3_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_7KeyTyped(evt);
+            }
+        });
 
+        r3_9.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r3_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3_9ActionPerformed(evt);
             }
         });
+        r3_9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r3_9KeyTyped(evt);
+            }
+        });
 
+        r2_7.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
+        r2_7.setText("4");
         r2_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2_7ActionPerformed(evt);
+            }
+        });
+        r2_7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                r2_7KeyTyped(evt);
             }
         });
 
@@ -1112,7 +1661,7 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r2_4ActionPerformed
 
     private void r1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1_4ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_r1_4ActionPerformed
 
     private void r1_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1_7ActionPerformed
@@ -1120,7 +1669,8 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r1_7ActionPerformed
 
     private void r1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1_1ActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_r1_1ActionPerformed
 
     private void r6_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r6_6ActionPerformed
@@ -1304,7 +1854,7 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r9_8ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        HighScoreScreen highScore = new HighScoreScreen();
+
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void r1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1_2ActionPerformed
@@ -1314,6 +1864,733 @@ public class SudokuGUI extends javax.swing.JFrame {
     private void r6_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r6_2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_r6_2ActionPerformed
+
+    private void r1_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1_9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r1_9ActionPerformed
+
+    private void r2_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r2_5ActionPerformed
+        
+    }//GEN-LAST:event_r2_5ActionPerformed
+
+    private void r1_2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r1_2KeyPressed
+
+    private void r1_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_2KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r1_2.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r1_2KeyTyped
+
+    private void r1_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_3KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r1_3.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r1_3KeyTyped
+
+    private void r1_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_5KeyTyped
+         if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r1_5.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r1_5KeyTyped
+
+    private void r1_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_7KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r1_7.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r1_7KeyTyped
+
+    private void r1_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_8KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r1_8.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r1_8KeyTyped
+
+    private void r2_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_1KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_1.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_1KeyTyped
+
+    private void r2_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_2KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_2.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_2KeyTyped
+
+    private void r2_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_3KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_3.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_3KeyTyped
+
+    private void r2_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_4KeyTyped
+
+    private void r2_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_5KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_5.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_5KeyTyped
+
+    private void r2_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_6.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_6KeyTyped
+
+    private void r2_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_8KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_8.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_8KeyTyped
+
+    private void r2_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_9KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+        }
+        if (r2_9.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r2_9KeyTyped
+
+    private void r3_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_1KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r3_1.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r3_1KeyTyped
+
+    private void r3_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_2KeyTyped
+        r3_2.setText("1");              
+        r3_2.setEditable(false);
+    }//GEN-LAST:event_r3_2KeyTyped
+
+    private void r3_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_3KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r3_3.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r3_3KeyTyped
+
+    private void r3_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r3_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r3_4KeyTyped
+
+    private void r3_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_5KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r3_5.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r3_5KeyTyped
+
+    private void r3_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r3_6.getText().length() == 1) {
+            evt.consume();
+        }    }//GEN-LAST:event_r3_6KeyTyped
+
+    private void r3_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_9KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r3_9.getText().length() == 1) {
+            evt.consume();
+        }    }//GEN-LAST:event_r3_9KeyTyped
+
+    private void r4_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_2KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r4_2.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r4_2KeyTyped
+
+    private void r4_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r4_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r4_4KeyTyped
+
+    private void r4_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r4_6.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r4_6KeyTyped
+
+    private void r4_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_9KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r4_9.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r4_9KeyTyped
+
+    private void r5_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_1KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_1.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_1KeyTyped
+
+    private void r5_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_2KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_2.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_2KeyTyped
+
+    private void r5_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_3KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_3.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_3KeyTyped
+
+    private void r5_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_4KeyTyped
+
+    private void r5_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_6.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_6KeyTyped
+
+    private void r5_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_7KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_7.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_7KeyTyped
+
+    private void r5_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_8KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_8.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_8KeyTyped
+
+    private void r5_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_9KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r5_9.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r5_9KeyTyped
+
+    private void r6_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_1KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r6_1.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r6_1KeyTyped
+
+    private void r6_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r6_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r6_4KeyTyped
+
+    private void r6_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r6_6.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r6_6KeyTyped
+
+    private void r6_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_8KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r6_8.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r6_8KeyTyped
+
+    private void r7_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_1KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r7_1.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r7_1KeyTyped
+
+    private void r7_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r7_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r7_4KeyTyped
+
+    private void r7_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_5KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r7_5.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r7_5KeyTyped
+
+    private void r7_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r7_6.getText().length() == 1) {
+            evt.consume();
+        }    }//GEN-LAST:event_r7_6KeyTyped
+
+    private void r7_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_7KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r7_7.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r7_7KeyTyped
+
+    private void r7_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_9KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r7_9.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r7_9KeyTyped
+
+    private void r8_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_1KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_1.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_1KeyTyped
+
+    private void r8_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_2KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_2.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_2KeyTyped
+
+    private void r8_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_4KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_4.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_4KeyTyped
+
+    private void r8_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_5KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_5.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_5KeyTyped
+
+    private void r8_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_6KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_6.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_6KeyTyped
+
+    private void r8_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_7KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_7.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_7KeyTyped
+
+    private void r8_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_8KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_8.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_8KeyTyped
+
+    private void r8_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_9KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r8_9.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r8_9KeyTyped
+
+    private void r9_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_2KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r9_2.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r9_2KeyTyped
+
+    private void r9_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_3KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r9_3.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r9_3KeyTyped
+
+    private void r9_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_5KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r9_5.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r9_5KeyTyped
+
+    private void r9_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_7KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r9_7.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r9_7KeyTyped
+
+    private void r9_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_8KeyTyped
+        if(Character.isLetter(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
+
+        }
+        if (r9_8.getText().length() == 1) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_r9_8KeyTyped
+
+    private void r1_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_1KeyTyped
+        r1_1.setText("8");              
+        r1_1.setEditable(false);
+    }//GEN-LAST:event_r1_1KeyTyped
+
+    private void r1_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_4KeyTyped
+        r1_4.setText("4");              
+        r1_4.setEditable(false);
+    }//GEN-LAST:event_r1_4KeyTyped
+
+    private void r1_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_6KeyTyped
+        r1_6.setText("6");              
+        r1_6.setEditable(false);
+    }//GEN-LAST:event_r1_6KeyTyped
+
+    private void r1_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_9KeyTyped
+        r1_9.setText("7");              
+        r1_9.setEditable(false);
+    }//GEN-LAST:event_r1_9KeyTyped
+
+    private void r2_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_7KeyTyped
+        r2_7.setText("4");              
+        r2_7.setEditable(false);
+    }//GEN-LAST:event_r2_7KeyTyped
+
+    private void r3_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_7KeyTyped
+        r3_7.setText("6");              
+        r3_7.setEditable(false);
+    }//GEN-LAST:event_r3_7KeyTyped
+
+    private void r3_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_8KeyTyped
+        r3_8.setText("5");              
+        r3_8.setEditable(false);
+    }//GEN-LAST:event_r3_8KeyTyped
+
+    private void r4_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_1KeyTyped
+        r4_1.setText("5");              
+        r4_1.setEditable(false);
+    }//GEN-LAST:event_r4_1KeyTyped
+
+    private void r4_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_3KeyTyped
+        r4_3.setText("9");              
+        r4_3.setEditable(false);
+    }//GEN-LAST:event_r4_3KeyTyped
+
+    private void r4_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_5KeyTyped
+        r4_5.setText("3");              
+        r4_5.setEditable(false);
+    }//GEN-LAST:event_r4_5KeyTyped
+
+    private void r4_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_7KeyTyped
+        r4_7.setText("7");              
+        r4_7.setEditable(false);
+    }//GEN-LAST:event_r4_7KeyTyped
+
+    private void r4_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_8KeyTyped
+        r4_8.setText("8");              
+        r4_8.setEditable(false);
+    }//GEN-LAST:event_r4_8KeyTyped
+
+    private void r5_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_5KeyTyped
+        r5_5.setText("7");              
+        r5_5.setEditable(false);
+    }//GEN-LAST:event_r5_5KeyTyped
+
+    private void r6_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_2KeyTyped
+        r6_2.setText("4");              
+        r6_2.setEditable(false);
+    }//GEN-LAST:event_r6_2KeyTyped
+
+    private void r6_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_3KeyTyped
+        r6_3.setText("8");              
+        r6_3.setEditable(false);
+    }//GEN-LAST:event_r6_3KeyTyped
+
+    private void r6_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_5KeyTyped
+        r6_3.setText("2");              
+        r6_3.setEditable(false);
+    }//GEN-LAST:event_r6_5KeyTyped
+
+    private void r6_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_7KeyTyped
+
+        r6_7.setText("1");              
+        r6_7.setEditable(false);
+    }//GEN-LAST:event_r6_7KeyTyped
+
+    private void r6_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_9KeyTyped
+        r6_9.setText("3");              
+        r6_9.setEditable(false);
+    }//GEN-LAST:event_r6_9KeyTyped
+
+    private void r7_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_2KeyTyped
+        r7_2.setText("5");              
+        r7_2.setEditable(false);
+    }//GEN-LAST:event_r7_2KeyTyped
+
+    private void r7_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_3KeyTyped
+        r7_3.setText("2");              
+        r7_3.setEditable(false);
+    }//GEN-LAST:event_r7_3KeyTyped
+
+    private void r7_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_8KeyTyped
+        r7_8.setText("9");              
+        r7_8.setEditable(false);
+    }//GEN-LAST:event_r7_8KeyTyped
+
+    private void r8_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_3KeyTyped
+        r8_3.setText("1");              
+        r8_3.setEditable(false);
+    }//GEN-LAST:event_r8_3KeyTyped
+
+    private void r9_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_1KeyTyped
+        r9_1.setText("3");              
+        r9_1.setEditable(false);
+    }//GEN-LAST:event_r9_1KeyTyped
+
+    private void r9_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_4KeyTyped
+        r9_4.setText("9");              
+        r9_4.setEditable(false);
+    }//GEN-LAST:event_r9_4KeyTyped
+
+    private void r9_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_6KeyTyped
+        r9_6.setText("2");              
+        r9_6.setEditable(false);
+    }//GEN-LAST:event_r9_6KeyTyped
+
+    private void r9_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_9KeyTyped
+        r9_9.setText("5");              
+        r9_9.setEditable(false);
+    }//GEN-LAST:event_r9_9KeyTyped
 
     /**
      * @param args the command line arguments
