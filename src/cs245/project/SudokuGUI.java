@@ -13,16 +13,11 @@ import javax.swing.JOptionPane;
  */
 public class SudokuGUI extends javax.swing.JFrame {
 
-    Sudoku sg;
+    SudokuGame sg;
    
-    public void SudokuStart(Sudoku sg){
+    public void SudokuStart(SudokuGame sg){
         this.sg = sg;
-
-        
-        
-        
-        
-        
+            
     }
     public SudokuGUI() {
         initComponents();

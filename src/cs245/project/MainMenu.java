@@ -197,6 +197,8 @@ public class MainMenu extends javax.swing.JFrame {
                 catch(Exception e) {
                     
                 }
+                SudokuGame sudokuGame = new SudokuGame();
+                sudokuGame.start();
                 new MainMenu().setVisible(true);
             }
         });
