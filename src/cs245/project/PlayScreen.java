@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
+* assignment: Project v1.1
 * date last modified: 1/18/2017
 *
 * purpose: This file is the play screen, which is what the user will
@@ -35,7 +35,7 @@ public class PlayScreen extends javax.swing.JFrame {
     String hiddenWord;
     //will be used to check if letter is in word
     String[] wordArray;
-    
+    ColorGame cg;
     HangMan hangman;
     HashMap<Character, javax.swing.JButton> letterButtonMap  = new HashMap<>(); 
     
@@ -612,8 +612,13 @@ public class PlayScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_TActionPerformed
 
     private void SkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipActionPerformed
+        cg = new ColorGame();
+        cg.start();
+        ColorGameGUI cgGUI = new ColorGameGUI();
+        cgGUI.setColorGame(cg);
+        hangman.setScore(0);
         // TODO add your handling code here:
-        hangman.loadEndPage(0);
+        cg.loadColorPage(hangman.getScore(),cgGUI);
         this.dispose();
     }//GEN-LAST:event_SkipActionPerformed
 
