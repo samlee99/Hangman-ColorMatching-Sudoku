@@ -93,16 +93,16 @@ public class SudokuGame extends BaseGame {
         return gridString;
     }
     
-    private boolean validSubmit(){
+    public boolean validSubmit(){
         for(int i = 0; i < GRID_SIZE; ++i){
             ArrayList<Integer> row = new ArrayList<>(GRID_SIZE);
             ArrayList<Integer> box = new ArrayList<>(GRID_SIZE);
             ArrayList<Integer> column = (ArrayList<Integer>)grid.get(i).clone();
             for(int j = 0; j < GRID_SIZE; ++j){
-                row.set(j, grid.get(j).get(i));
+                row.add(grid.get(j).get(i));
                 int iBox = (i/3)*3 + j/3;
                 int jBox = i*3%9+j%3;
-                box.set(j, grid.get(iBox).get(jBox));
+                box.add(grid.get(iBox).get(jBox));
             }
             if (!(validate(column) && validate(row) && validate(box)))
                 return false;            

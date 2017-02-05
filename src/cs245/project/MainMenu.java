@@ -198,6 +198,12 @@ public class MainMenu extends javax.swing.JFrame {
                     
                 }
                 new MainMenu().setVisible(true);
+                
+                SudokuGame sg = new SudokuGame();
+                sg.start();
+                SudokuGUI sgui = new SudokuGUI();
+                sgui.sudokuStart(sg);
+                sgui.setVisible(true);
             }
         });
     }

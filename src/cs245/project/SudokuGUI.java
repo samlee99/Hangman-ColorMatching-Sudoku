@@ -615,6 +615,7 @@ public class SudokuGUI extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        r6_3.setEditable(false);
         r6_3.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r6_3.setText("8");
         r6_3.addActionListener(new java.awt.event.ActionListener() {
@@ -1334,6 +1335,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             }
         });
 
+        r6_5.setEditable(false);
         r6_5.setFont(new java.awt.Font("Arial", 0, 35)); // NOI18N
         r6_5.setText("2");
         r6_5.addActionListener(new java.awt.event.ActionListener() {
@@ -1553,6 +1555,11 @@ public class SudokuGUI extends javax.swing.JFrame {
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, -1, -1));
 
         jToggleButton2.setText("Submit");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Wide Latin", 0, 16)); // NOI18N
@@ -1879,7 +1886,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r1_2.getText().length() == 0)
             sg.addToGrid(0, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r1_2.getText().length() == 1) {
             evt.consume();
@@ -1893,7 +1900,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r1_3.getText().length() == 0)
             sg.addToGrid(0, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r1_3.getText().length() == 1) {
             evt.consume();
@@ -1907,7 +1914,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r1_5.getText().length() == 0)
             sg.addToGrid(0, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r1_5.getText().length() == 1) {
             evt.consume();
@@ -1921,7 +1928,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r1_7.getText().length() == 0)
             sg.addToGrid(0, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r1_7.getText().length() == 1) {
             evt.consume();
@@ -1935,7 +1942,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r1_8.getText().length() == 0)
             sg.addToGrid(0, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r1_8.getText().length() == 1) {
             evt.consume();
@@ -1949,7 +1956,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_1.getText().length() == 0)
             sg.addToGrid(1, 0, Character.getNumericValue(evt.getKeyChar()));
             
         if (r2_1.getText().length() == 1) {
@@ -1964,7 +1971,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_2.getText().length() == 0)
             sg.addToGrid(1, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r2_2.getText().length() == 1) {
             evt.consume();
@@ -1978,7 +1985,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_3.getText().length() == 0)
             sg.addToGrid(1, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r2_3.getText().length() == 1) {
             evt.consume();
@@ -1992,7 +1999,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_4.getText().length() == 0)
             sg.addToGrid(1, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r2_4.getText().length() == 1) {
             evt.consume();
@@ -2006,7 +2013,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_5.getText().length() == 0)
             sg.addToGrid(1, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r2_5.getText().length() == 1) {
             evt.consume();
@@ -2020,7 +2027,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_6.getText().length() == 0)
             sg.addToGrid(1, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r2_6.getText().length() == 1) {
             evt.consume();
@@ -2034,7 +2041,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_8.getText().length() == 0)
             sg.addToGrid(1, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r2_8.getText().length() == 1) {
             evt.consume();
@@ -2048,7 +2055,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r2_9.getText().length() == 0)
             sg.addToGrid(1, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r2_9.getText().length() == 1) {
             evt.consume();
@@ -2062,7 +2069,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r3_1.getText().length() == 0)
             sg.addToGrid(2, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r3_1.getText().length() == 1) {
             evt.consume();
@@ -2081,7 +2088,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r3_3.getText().length() == 0)
             sg.addToGrid(2, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r3_3.getText().length() == 1) {
             evt.consume();
@@ -2095,7 +2102,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r3_4.getText().length() == 0)
             sg.addToGrid(2, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r3_4.getText().length() == 1) {
             evt.consume();
@@ -2109,7 +2116,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r3_5.getText().length() == 0)
             sg.addToGrid(2, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r3_5.getText().length() == 1) {
             evt.consume();
@@ -2123,7 +2130,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r3_6.getText().length() == 0)
             sg.addToGrid(2, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r3_6.getText().length() == 1) {
             evt.consume();
@@ -2136,7 +2143,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r3_9.getText().length() == 0)
             sg.addToGrid(2, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r3_9.getText().length() == 1) {
             evt.consume();
@@ -2149,7 +2156,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r4_2.getText().length() == 0)
             sg.addToGrid(3, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r4_2.getText().length() == 1) {
             evt.consume();
@@ -2163,7 +2170,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r4_4.getText().length() == 0)
             sg.addToGrid(3, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r4_4.getText().length() == 1) {
             evt.consume();
@@ -2177,7 +2184,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r4_6.getText().length() == 0)
             sg.addToGrid(3, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r4_6.getText().length() == 1) {
             evt.consume();
@@ -2191,7 +2198,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r4_9.getText().length() == 0)
             sg.addToGrid(3, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r4_9.getText().length() == 1) {
             evt.consume();
@@ -2205,7 +2212,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_1.getText().length() == 0)
             sg.addToGrid(4, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r5_1.getText().length() == 1) {
             evt.consume();
@@ -2219,7 +2226,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_2.getText().length() == 0)
             sg.addToGrid(4, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r5_2.getText().length() == 1) {
             evt.consume();
@@ -2233,7 +2240,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_3.getText().length() == 0)
             sg.addToGrid(4, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r5_3.getText().length() == 1) {
             evt.consume();
@@ -2247,7 +2254,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_4.getText().length() == 0)
             sg.addToGrid(4, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r5_4.getText().length() == 1) {
             evt.consume();
@@ -2261,7 +2268,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_6.getText().length() == 0)
             sg.addToGrid(4, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r5_6.getText().length() == 1) {
             evt.consume();
@@ -2275,7 +2282,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_7.getText().length() == 0)
             sg.addToGrid(4, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r5_7.getText().length() == 1) {
             evt.consume();
@@ -2289,7 +2296,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_8.getText().length() == 0)
             sg.addToGrid(4, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r5_8.getText().length() == 1) {
             evt.consume();
@@ -2303,7 +2310,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r5_9.getText().length() == 0)
             sg.addToGrid(4, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r5_9.getText().length() == 1) {
             evt.consume();
@@ -2317,7 +2324,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r6_1.getText().length() == 0)
             sg.addToGrid(5, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r6_1.getText().length() == 1) {
             evt.consume();
@@ -2331,7 +2338,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r6_4.getText().length() == 0)
             sg.addToGrid(5, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r6_4.getText().length() == 1) {
             evt.consume();
@@ -2345,7 +2352,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r6_6.getText().length() == 0)
             sg.addToGrid(5, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r6_6.getText().length() == 1) {
             evt.consume();
@@ -2359,7 +2366,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r6_8.getText().length() == 0)
             sg.addToGrid(5, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r6_8.getText().length() == 1) {
             evt.consume();
@@ -2373,7 +2380,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r7_1.getText().length() == 0)
             sg.addToGrid(6, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r7_1.getText().length() == 1) {
             evt.consume();
@@ -2387,7 +2394,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r7_4.getText().length() == 0)
             sg.addToGrid(6, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r7_4.getText().length() == 1) {
             evt.consume();
@@ -2401,7 +2408,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r7_5.getText().length() == 0)
             sg.addToGrid(6, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r7_5.getText().length() == 1) {
             evt.consume();
@@ -2415,8 +2422,8 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
-            sg.addToGrid(6, 0, Character.getNumericValue(evt.getKeyChar()));
+        if(isNum && r7_6.getText().length() == 0)
+            sg.addToGrid(6, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r7_6.getText().length() == 1) {
             evt.consume();
         }    }//GEN-LAST:event_r7_6KeyTyped
@@ -2428,7 +2435,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r7_7.getText().length() == 0)
             sg.addToGrid(6, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r7_7.getText().length() == 1) {
             evt.consume();
@@ -2442,7 +2449,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r7_9.getText().length() == 0)
             sg.addToGrid(6, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r7_9.getText().length() == 1) {
             evt.consume();
@@ -2456,7 +2463,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_1.getText().length() == 0)
             sg.addToGrid(7, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r8_1.getText().length() == 1) {
             evt.consume();
@@ -2470,7 +2477,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_2.getText().length() == 0)
             sg.addToGrid(7, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r8_2.getText().length() == 1) {
             evt.consume();
@@ -2484,7 +2491,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_4.getText().length() == 0)
             sg.addToGrid(7, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r8_4.getText().length() == 1) {
             evt.consume();
@@ -2498,7 +2505,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_5.getText().length() == 0)
             sg.addToGrid(7, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r8_5.getText().length() == 1) {
             evt.consume();
@@ -2512,7 +2519,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_6.getText().length() == 0)
             sg.addToGrid(7, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r8_6.getText().length() == 1) {
             evt.consume();
@@ -2526,7 +2533,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_7.getText().length() == 0)
             sg.addToGrid(7, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r8_7.getText().length() == 1) {
             evt.consume();
@@ -2540,7 +2547,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_8.getText().length() == 0)
             sg.addToGrid(7, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r8_8.getText().length() == 1) {
             evt.consume();
@@ -2554,7 +2561,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r8_9.getText().length() == 0)
             sg.addToGrid(7, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r8_9.getText().length() == 1) {
             evt.consume();
@@ -2568,7 +2575,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r9_2.getText().length() == 0)
             sg.addToGrid(8, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r9_2.getText().length() == 1) {
             evt.consume();
@@ -2582,7 +2589,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r9_3.getText().length() == 0)
             sg.addToGrid(8, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r9_3.getText().length() == 1) {
             evt.consume();
@@ -2596,7 +2603,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r9_5.getText().length() == 0)
             sg.addToGrid(8, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r9_5.getText().length() == 1) {
             evt.consume();
@@ -2610,7 +2617,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r9_7.getText().length() == 0)
             sg.addToGrid(8, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r9_7.getText().length() == 1) {
             evt.consume();
@@ -2624,7 +2631,7 @@ public class SudokuGUI extends javax.swing.JFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
-        if(isNum)
+        if(isNum && r9_8.getText().length() == 0)
             sg.addToGrid(8, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r9_8.getText().length() == 1) {
             evt.consume();
@@ -2707,8 +2714,8 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r6_3KeyTyped
 
     private void r6_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_5KeyTyped
-        r6_3.setText("2");              
-        r6_3.setEditable(false);
+        r6_5.setText("2");              
+        r6_5.setEditable(false);
     }//GEN-LAST:event_r6_5KeyTyped
 
     private void r6_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_7KeyTyped
@@ -2761,6 +2768,11 @@ public class SudokuGUI extends javax.swing.JFrame {
         r9_9.setText("5");              
         r9_9.setEditable(false);
     }//GEN-LAST:event_r9_9KeyTyped
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(sg.validSubmit());
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
      * @param args the command line arguments
