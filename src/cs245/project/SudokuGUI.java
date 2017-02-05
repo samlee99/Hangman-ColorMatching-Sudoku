@@ -15,14 +15,14 @@ public class SudokuGUI extends javax.swing.JFrame {
 
     SudokuGame sg;
    
-    public void SudokuStart(SudokuGame sg){
+    public void sudokuStart(SudokuGame sg){
         this.sg = sg;
             
     }
     public SudokuGUI() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1873,142 +1873,197 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r1_2KeyPressed
 
     private void r1_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_2KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(0, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r1_2.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r1_2KeyTyped
 
     private void r1_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_3KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(0, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r1_3.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r1_3KeyTyped
 
     private void r1_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_5KeyTyped
-         if(Character.isLetter(evt.getKeyChar())) {
+        boolean isNum = true;
+        if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(0, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r1_5.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r1_5KeyTyped
 
     private void r1_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_7KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(0, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r1_7.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r1_7KeyTyped
 
     private void r1_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r1_8KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(0, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r1_8.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r1_8KeyTyped
 
     private void r2_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_1KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 0, Character.getNumericValue(evt.getKeyChar()));
+            
         if (r2_1.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_1KeyTyped
 
     private void r2_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_2KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r2_2.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_2KeyTyped
 
     private void r2_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_3KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r2_3.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_3KeyTyped
 
     private void r2_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r2_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_4KeyTyped
 
     private void r2_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_5KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r2_5.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_5KeyTyped
 
     private void r2_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r2_6.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_6KeyTyped
 
     private void r2_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_8KeyTyped
+         boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r2_8.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_8KeyTyped
 
     private void r2_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2_9KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
         }
+        if(isNum)
+            sg.addToGrid(1, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r2_9.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r2_9KeyTyped
 
     private void r3_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_1KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(2, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r3_1.getText().length() == 1) {
             evt.consume();
         }
@@ -2020,437 +2075,557 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r3_2KeyTyped
 
     private void r3_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_3KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(2, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r3_3.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r3_3KeyTyped
 
     private void r3_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(2, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r3_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r3_4KeyTyped
 
     private void r3_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_5KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(2, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r3_5.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r3_5KeyTyped
 
     private void r3_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(2, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r3_6.getText().length() == 1) {
             evt.consume();
         }    }//GEN-LAST:event_r3_6KeyTyped
 
     private void r3_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3_9KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(2, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r3_9.getText().length() == 1) {
             evt.consume();
         }    }//GEN-LAST:event_r3_9KeyTyped
 
     private void r4_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_2KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(3, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r4_2.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r4_2KeyTyped
 
     private void r4_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(3, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r4_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r4_4KeyTyped
 
     private void r4_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(3, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r4_6.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r4_6KeyTyped
 
     private void r4_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r4_9KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(3, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r4_9.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r4_9KeyTyped
 
     private void r5_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_1KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r5_1.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_1KeyTyped
 
     private void r5_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_2KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r5_2.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_2KeyTyped
 
     private void r5_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_3KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r5_3.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_3KeyTyped
 
     private void r5_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r5_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_4KeyTyped
 
     private void r5_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r5_6.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_6KeyTyped
 
     private void r5_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_7KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r5_7.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_7KeyTyped
 
     private void r5_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_8KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r5_8.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_8KeyTyped
 
     private void r5_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r5_9KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(4, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r5_9.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r5_9KeyTyped
 
     private void r6_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_1KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(5, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r6_1.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r6_1KeyTyped
 
     private void r6_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(5, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r6_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r6_4KeyTyped
 
     private void r6_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(5, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r6_6.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r6_6KeyTyped
 
     private void r6_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r6_8KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(5, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r6_8.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r6_8KeyTyped
 
     private void r7_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_1KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(6, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r7_1.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r7_1KeyTyped
 
     private void r7_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(6, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r7_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r7_4KeyTyped
 
     private void r7_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_5KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(6, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r7_5.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r7_5KeyTyped
 
     private void r7_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(6, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r7_6.getText().length() == 1) {
             evt.consume();
         }    }//GEN-LAST:event_r7_6KeyTyped
 
     private void r7_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_7KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(6, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r7_7.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r7_7KeyTyped
 
     private void r7_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r7_9KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(6, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r7_9.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r7_9KeyTyped
 
     private void r8_1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_1KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 0, Character.getNumericValue(evt.getKeyChar()));
         if (r8_1.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_1KeyTyped
 
     private void r8_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_2KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r8_2.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_2KeyTyped
 
     private void r8_4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_4KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 3, Character.getNumericValue(evt.getKeyChar()));
         if (r8_4.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_4KeyTyped
 
     private void r8_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_5KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r8_5.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_5KeyTyped
 
     private void r8_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_6KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 5, Character.getNumericValue(evt.getKeyChar()));
         if (r8_6.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_6KeyTyped
 
     private void r8_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_7KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r8_7.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_7KeyTyped
 
     private void r8_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_8KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r8_8.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_8KeyTyped
 
     private void r8_9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r8_9KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(7, 8, Character.getNumericValue(evt.getKeyChar()));
         if (r8_9.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r8_9KeyTyped
 
     private void r9_2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_2KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(8, 1, Character.getNumericValue(evt.getKeyChar()));
         if (r9_2.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r9_2KeyTyped
 
     private void r9_3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_3KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(8, 2, Character.getNumericValue(evt.getKeyChar()));
         if (r9_3.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r9_3KeyTyped
 
     private void r9_5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_5KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(8, 4, Character.getNumericValue(evt.getKeyChar()));
         if (r9_5.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r9_5KeyTyped
 
     private void r9_7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_7KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(8, 6, Character.getNumericValue(evt.getKeyChar()));
         if (r9_7.getText().length() == 1) {
             evt.consume();
         }
     }//GEN-LAST:event_r9_7KeyTyped
 
     private void r9_8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r9_8KeyTyped
+        boolean isNum = true;
         if(Character.isLetter(evt.getKeyChar())) {
+            isNum = false;
             evt.consume();
             JOptionPane.showMessageDialog(null, "Not a number. Please enter a number");
-
         }
+        if(isNum)
+            sg.addToGrid(8, 7, Character.getNumericValue(evt.getKeyChar()));
         if (r9_8.getText().length() == 1) {
             evt.consume();
         }

@@ -156,6 +156,13 @@ public class ColorGame extends BaseGame {
         hs.Player_Score.setVisible(true);
         hs.Player_Score.setText("Your Score: " + finalScore);
         cgGUI.dispose();
+        SudokuGame sgame = new SudokuGame();
+        sgame.start();
+        SudokuGUI sgui = new SudokuGUI();
+        sgame.setSudokuGui(sgui);
+        sgame.setScore(finalScore);
+        sgui.sudokuStart(sgame);
+        sgui.setVisible(true);
     }
         // method: getColor
 	// purpose: retrieves the color from the colors string array

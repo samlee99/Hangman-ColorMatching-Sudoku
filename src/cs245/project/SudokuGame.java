@@ -16,12 +16,15 @@ public class SudokuGame extends BaseGame {
     
     private ArrayList<ArrayList<Integer>> grid;
     private final int GRID_SIZE;
+    private SudokuGUI sGui;
     
     public SudokuGame(){
         super("Sudoku");
         GRID_SIZE = 9;
     }
-    
+    public void setSudokuGui(SudokuGUI sGui){
+        this.sGui = sGui;
+    }
     @Override
     protected void initGame(){
         grid = new ArrayList<>();
@@ -70,6 +73,7 @@ public class SudokuGame extends BaseGame {
     
     public void addToGrid(int i, int j, int val){
         grid.get(i).set(j, val);
+        System.out.println(gridToString());
     }
     
     public void removeFromGrid(int i, int j){
