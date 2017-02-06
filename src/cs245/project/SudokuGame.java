@@ -122,6 +122,8 @@ public class SudokuGame extends BaseGame {
             int reply = JOptionPane.showConfirmDialog(null, "Retry?", "Incorrect answer.  Would you like to try again?", JOptionPane.YES_NO_OPTION);
             if(reply == JOptionPane.NO_OPTION) {
                 endGame();
+            } else {
+                sudokuScore = 540;
             }
         } else {
             endGame();
