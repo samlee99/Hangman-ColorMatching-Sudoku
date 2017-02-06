@@ -41,6 +41,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="colorBtn1">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Click the death star!"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorBtn1ActionPerformed"/>
       </Events>
@@ -54,6 +57,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="colorBtn2">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Click the death star!"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorBtn2ActionPerformed"/>
       </Events>
@@ -68,6 +74,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="colorBtn3">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Click the death star!"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorBtn3ActionPerformed"/>
       </Events>
@@ -81,6 +90,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="colorBtn4">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Click the death star!"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorBtn4ActionPerformed"/>
       </Events>
@@ -94,6 +106,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="colorBtn5">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Click the death star!"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorBtn5ActionPerformed"/>
       </Events>
@@ -115,7 +130,21 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="490" y="10" width="100" height="20"/>
+          <AbsoluteConstraints x="470" y="50" width="100" height="20"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Clock">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="380" y="20" width="180" height="20"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -127,7 +156,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="4" y="4" width="590" height="390"/>
+          <AbsoluteConstraints x="0" y="0" width="600" height="400"/>
         </Constraint>
       </Constraints>
     </Component>

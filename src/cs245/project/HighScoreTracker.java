@@ -79,13 +79,11 @@ public class HighScoreTracker {
     public void addScore(int score) {
         String name = "";
         if(score > scores[scores.length-1]) {
-            name = JOptionPane.showInputDialog(frame, "New High Score! Enter your initials:");
-                scores[scores.length-1] = score;
-                playerNames[scores.length-1] = name;
-                sort();
-                writeScores();
-//                HighScoreScreen hs = new HighScoreScreen();
-                
+            name = JOptionPane.showInputDialog(frame, "New High Score! Enter your initials: ");
+            scores[scores.length-1] = score;
+            playerNames[scores.length-1] = name;
+            sort();
+            writeScores();
         }
     }
     // method: sort

@@ -17,6 +17,8 @@
  */
 package cs245.project;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -110,10 +112,13 @@ public class PlayScreen extends javax.swing.JFrame {
                     for(;;)
                     {
                         GregorianCalendar cal = new GregorianCalendar();
+                        
                         int second = cal.get(GregorianCalendar.SECOND);
                         int minute = cal.get(GregorianCalendar.MINUTE);
                         int hour = cal.get(GregorianCalendar.HOUR);
-                        Clock.setText(hour + ": " + minute + ":  " + second);
+                        Date now = new Date();
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM d, yyyy");
+                        Clock.setText(dateFormatter.format(now) + "    " + hour + ": " + minute + ":  " + second);
                         try{
                             sleep(1000);
                         }
@@ -237,6 +242,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
         Skip.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Skip.setText("Skip");
+        Skip.setToolTipText("Press to skip to the color game.");
         Skip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SkipActionPerformed(evt);
@@ -336,6 +342,7 @@ public class PlayScreen extends javax.swing.JFrame {
         R.setBounds(480, 350, 50, 23);
 
         A.setText("A");
+        A.setToolTipText("");
         A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AActionPerformed(evt);
@@ -432,10 +439,13 @@ public class PlayScreen extends javax.swing.JFrame {
         getContentPane().add(hiddenWordLabel);
         hiddenWordLabel.setBounds(100, 0, 260, 30);
 
+        Clock.setBackground(new java.awt.Color(204, 204, 255));
         Clock.setForeground(new java.awt.Color(204, 0, 0));
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Clock.setText("TEXT");
+        Clock.setOpaque(true);
         getContentPane().add(Clock);
-        Clock.setBounds(500, 10, 68, 14);
+        Clock.setBounds(430, 10, 160, 14);
 
         gameScore.setBackground(new java.awt.Color(255, 255, 255));
         gameScore.setOpaque(true);

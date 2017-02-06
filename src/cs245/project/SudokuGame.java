@@ -17,10 +17,22 @@ public class SudokuGame extends BaseGame {
     private ArrayList<ArrayList<Integer>> grid;
     private final int GRID_SIZE;
     private SudokuGUI sGui;
+    int sudokuScore;
+    int[] solution = {8, 3, 5, 4, 1, 6, 9, 2, 7, 
+                      2, 9, 6, 8, 5, 7, 4, 3, 1, 
+                      4, 1, 7, 2, 9, 3, 6, 5, 8,
+                      5, 6, 9, 1, 3, 4, 7, 8, 2,
+                      1, 2, 3, 6, 7, 8, 5, 4, 9, 
+                      7, 4, 8, 5, 2, 9, 1, 6, 3,
+                      6, 5, 2, 7, 8, 1, 3, 9, 4,
+                      9, 8, 1, 3, 4, 5, 2, 7, 6,
+                      3, 7, 4, 9, 6, 2, 8, 1, 5};
+
     
     public SudokuGame(){
         super("Sudoku");
         GRID_SIZE = 9;
+        sudokuScore = 540;
     }
     public void setSudokuGui(SudokuGUI sGui){
         this.sGui = sGui;
@@ -93,33 +105,29 @@ public class SudokuGame extends BaseGame {
         return gridString;
     }
     
-    public boolean validSubmit(){
+    public void validSubmit(){
+        int k = 0;
         for(int i = 0; i < GRID_SIZE; ++i){
-            ArrayList<Integer> row = new ArrayList<>(GRID_SIZE);
-            ArrayList<Integer> box = new ArrayList<>(GRID_SIZE);
-            ArrayList<Integer> column = (ArrayList<Integer>)grid.get(i).clone();
+            
             for(int j = 0; j < GRID_SIZE; ++j){
-                row.add(grid.get(j).get(i));
-                int iBox = (i/3)*3 + j/3;
-                int jBox = i*3%9+j%3;
-                box.add(grid.get(iBox).get(jBox));
+                if(grid.get(i).get(j) != solution[k]){
+                    sudokuScore -= 10;
+                }
+                k++;
             }
-            if (!(validate(column) && validate(row) && validate(box)))
-                return false;            
         }
-        return true;
+        HighScoreScreen hs = new HighScoreScreen();
+        HighScoreTracker hsTrack = new HighScoreTracker();
+        hs.setPlayerScore(getScore() + sudokuScore);
+        hsTrack.addScore(getScore() + sudokuScore);
+        hs = new HighScoreScreen();
+        hs.setVisible(true);
+        hs.Back.setVisible(false);
+        hs.End.setVisible(true);
+        hs.Player_Score.setVisible(true);
+        hs.Player_Score.setText("Your Score: " + (getScore() + sudokuScore));
+        sGui.dispose();
     }
-    private boolean validate(ArrayList<Integer> check){
-        int i = 0;
-        Collections.sort(check);
-        for(int num : check){
-            if(num != ++i) return false;
-        }
-        return true;
-    }
-    @Override
-    protected void gameLoop(){
-        
-    }
+
     
 }

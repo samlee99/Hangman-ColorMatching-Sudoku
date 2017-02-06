@@ -84,6 +84,7 @@ public class HighScoreScreen extends javax.swing.JFrame {
         setAlwaysOnTop(true);
 
         Back.setText("Back");
+        Back.setToolTipText("Exit to main menu.");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -97,6 +98,7 @@ public class HighScoreScreen extends javax.swing.JFrame {
         Player_Score.setText("Your Score: 100");
 
         End.setText("End");
+        End.setToolTipText("Exit to main menu.");
         End.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EndActionPerformed(evt);

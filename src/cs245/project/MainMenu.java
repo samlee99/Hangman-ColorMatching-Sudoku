@@ -22,6 +22,8 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import static cs245.project.Splash.splashInit;
 import static java.lang.Thread.sleep;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import javax.swing.ImageIcon;
 
@@ -53,7 +55,9 @@ public class MainMenu extends javax.swing.JFrame {
                         int second = cal.get(Calendar.SECOND);
                         int minute = cal.get(Calendar.MINUTE);
                         int hour = cal.get(Calendar.HOUR);
-                        Clock.setText(hour + ": " + minute + ":  " + second);
+                        Date now = new Date();
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM d, yyyy");
+                        Clock.setText(dateFormatter.format(now) + "    " + hour + ": " + minute + ":  " + second);
                         try{
                             sleep(1000);
                         }
@@ -89,6 +93,7 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         Play.setText("Play");
+        Play.setToolTipText("Press to play the game.");
         Play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PlayActionPerformed(evt);
@@ -98,7 +103,7 @@ public class MainMenu extends javax.swing.JFrame {
         Play.setBounds(70, 350, 83, 23);
 
         High_Score.setText("High Score");
-        High_Score.setToolTipText("");
+        High_Score.setToolTipText("Press to open high score screen.");
         High_Score.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 High_ScoreActionPerformed(evt);
@@ -108,6 +113,7 @@ public class MainMenu extends javax.swing.JFrame {
         High_Score.setBounds(200, 350, 83, 23);
 
         Credits.setText("Credits");
+        Credits.setToolTipText("Press to open the credits screen.");
         Credits.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreditsActionPerformed(evt);
@@ -117,9 +123,10 @@ public class MainMenu extends javax.swing.JFrame {
         Credits.setBounds(330, 350, 83, 23);
 
         Clock.setForeground(new java.awt.Color(153, 0, 0));
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Clock.setText("TIME");
         getContentPane().add(Clock);
-        Clock.setBounds(460, 20, 70, 20);
+        Clock.setBounds(310, 20, 270, 20);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -198,12 +205,6 @@ public class MainMenu extends javax.swing.JFrame {
                     
                 }
                 new MainMenu().setVisible(true);
-                
-                SudokuGame sg = new SudokuGame();
-                sg.start();
-                SudokuGUI sgui = new SudokuGUI();
-                sgui.sudokuStart(sg);
-                sgui.setVisible(true);
             }
         });
     }

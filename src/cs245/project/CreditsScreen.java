@@ -66,6 +66,7 @@ public class CreditsScreen extends javax.swing.JFrame {
         jLabel6.setText("Steven Mai, 009593233");
 
         jButton1.setText("Back");
+        jButton1.setToolTipText("Exit to main menu.");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

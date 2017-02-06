@@ -17,8 +17,12 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
+import static java.lang.Thread.sleep;
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Level;
@@ -26,6 +30,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 /**
  *
  * @author amnipp
@@ -40,6 +45,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
      */
     public ColorGameGUI() {
         initComponents();
+        currentTime();
     }
 
     public void setColorGame(ColorGame cg){
@@ -121,6 +127,35 @@ public class ColorGameGUI extends javax.swing.JFrame {
             }
         }
     }
+    
+    public void currentTime() {
+        Thread clock = new Thread()
+        {
+                public void run()
+                {
+                    for(;;)
+                    {
+                        GregorianCalendar cal = new GregorianCalendar();
+                        
+                        int second = cal.get(GregorianCalendar.SECOND);
+                        int minute = cal.get(GregorianCalendar.MINUTE);
+                        int hour = cal.get(GregorianCalendar.HOUR);
+                        Date now = new Date();
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM d, yyyy");
+                        Clock.setText(dateFormatter.format(now) + "    " + hour + ": " + minute + ":  " + second);
+                        try{
+                            sleep(1000);
+                        }
+                        catch (Exception e)
+                        {
+                            JOptionPane.showMessageDialog(null, e);
+                        }
+                    }
+                }
+        };
+        clock.start();
+    }
+    
     //method: getScoreLabel
     //purpose: gets the score during the color game for display
     public JLabel getScoreLabel(){
@@ -149,6 +184,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         colorBtn4 = new RoundedButton();
         colorBtn5 = new RoundedButton();
         scoreLabel = new javax.swing.JLabel();
+        Clock = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -159,6 +195,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorLabel);
         colorLabel.setBounds(280, 180, 110, 50);
 
+        colorBtn1.setToolTipText("Click the death star!");
         colorBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colorBtn1ActionPerformed(evt);
@@ -167,6 +204,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorBtn1);
         colorBtn1.setBounds(70, 100, 120, 120);
 
+        colorBtn2.setToolTipText("Click the death star!");
         colorBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colorBtn2ActionPerformed(evt);
@@ -175,6 +213,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorBtn2);
         colorBtn2.setBounds(150, 250, 120, 120);
 
+        colorBtn3.setToolTipText("Click the death star!");
         colorBtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colorBtn3ActionPerformed(evt);
@@ -183,6 +222,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorBtn3);
         colorBtn3.setBounds(340, 250, 120, 120);
 
+        colorBtn4.setToolTipText("Click the death star!");
         colorBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colorBtn4ActionPerformed(evt);
@@ -191,6 +231,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
         getContentPane().add(colorBtn4);
         colorBtn4.setBounds(250, 30, 120, 120);
 
+        colorBtn5.setToolTipText("Click the death star!");
         colorBtn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colorBtn5ActionPerformed(evt);
@@ -201,11 +242,17 @@ public class ColorGameGUI extends javax.swing.JFrame {
 
         scoreLabel.setText("Score");
         getContentPane().add(scoreLabel);
-        scoreLabel.setBounds(490, 10, 100, 20);
+        scoreLabel.setBounds(470, 50, 100, 20);
+
+        Clock.setForeground(java.awt.Color.red);
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Clock.setToolTipText("");
+        getContentPane().add(Clock);
+        Clock.setBounds(380, 20, 180, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/white.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(4, 4, 590, 390);
+        jLabel1.setBounds(0, 0, 600, 400);
 
         pack();
         setLocationRelativeTo(null);
@@ -286,6 +333,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Clock;
     private javax.swing.JButton colorBtn1;
     public javax.swing.JButton colorBtn2;
     private javax.swing.JButton colorBtn3;

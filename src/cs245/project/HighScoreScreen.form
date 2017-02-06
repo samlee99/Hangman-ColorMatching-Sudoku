@@ -73,6 +73,7 @@
     <Component class="javax.swing.JButton" name="Back">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
+        <Property name="toolTipText" type="java.lang.String" value="Exit to main menu."/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackActionPerformed"/>
@@ -103,6 +104,7 @@
     <Component class="javax.swing.JButton" name="End">
       <Properties>
         <Property name="text" type="java.lang.String" value="End"/>
+        <Property name="toolTipText" type="java.lang.String" value="Exit to main menu."/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EndActionPerformed"/>

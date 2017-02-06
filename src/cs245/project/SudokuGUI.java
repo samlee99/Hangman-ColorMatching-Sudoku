@@ -5,6 +5,10 @@
  */
 package cs245.project;
 
+import static java.lang.Thread.sleep;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +25,35 @@ public class SudokuGUI extends javax.swing.JFrame {
     }
     public SudokuGUI() {
         initComponents();
+        currentTime();
+    }
+    
+    public void currentTime() {
+        Thread clock = new Thread()
+        {
+                public void run()
+                {
+                    for(;;)
+                    {
+                        GregorianCalendar cal = new GregorianCalendar();
+                        
+                        int second = cal.get(GregorianCalendar.SECOND);
+                        int minute = cal.get(GregorianCalendar.MINUTE);
+                        int hour = cal.get(GregorianCalendar.HOUR);
+                        Date now = new Date();
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM d, yyyy");
+                        Clock.setText(dateFormatter.format(now) + "    " + hour + ": " + minute + ":  " + second);
+                        try{
+                            sleep(1000);
+                        }
+                        catch (Exception e)
+                        {
+                            JOptionPane.showMessageDialog(null, e);
+                        }
+                    }
+                }
+        };
+        clock.start();
     }
     
     /**
@@ -125,6 +158,7 @@ public class SudokuGUI extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        Clock = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -290,7 +324,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, 120));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, 120));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -451,7 +485,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, -1, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -610,7 +644,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 120, 120));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 120, 120));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -772,7 +806,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -921,7 +955,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -1080,7 +1114,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, 120));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, 120));
 
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel7.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -1232,7 +1266,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel12.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -1393,7 +1427,7 @@ public class SudokuGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
 
         jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel13.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -1544,17 +1578,19 @@ public class SudokuGUI extends javax.swing.JFrame {
                     .addComponent(r3_9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+        getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
 
         jToggleButton1.setText("Quit");
+        jToggleButton1.setToolTipText("Press to quit game.");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, -1, -1));
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, -1, -1));
 
         jToggleButton2.setText("Submit");
+        jToggleButton2.setToolTipText("Press to submit your answers.");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
@@ -1565,6 +1601,11 @@ public class SudokuGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Wide Latin", 0, 16)); // NOI18N
         jLabel1.setText("Sudoku");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        Clock.setForeground(java.awt.Color.red);
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Clock.setText("jLabel2");
+        getContentPane().add(Clock, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 6, 190, 20));
 
         pack();
         setLocationRelativeTo(null);
@@ -1856,7 +1897,17 @@ public class SudokuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_r9_8ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-
+        HighScoreScreen hs = new HighScoreScreen();
+        HighScoreTracker hsTrack = new HighScoreTracker();
+        hs.setPlayerScore(sg.getScore());
+        hsTrack.addScore(sg.getScore());
+        hs = new HighScoreScreen();
+        hs.setVisible(true);
+        hs.Back.setVisible(false);
+        hs.End.setVisible(true);
+        hs.Player_Score.setVisible(true);
+        hs.Player_Score.setText("Your Score: " + sg.getScore());
+        this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void r1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1_2ActionPerformed
@@ -2771,7 +2822,7 @@ public class SudokuGUI extends javax.swing.JFrame {
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // TODO add your handling code here:
-        System.out.println(sg.validSubmit());
+        sg.validSubmit();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
@@ -2810,6 +2861,7 @@ public class SudokuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Clock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;

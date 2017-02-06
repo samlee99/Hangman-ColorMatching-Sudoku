@@ -147,14 +147,14 @@ public class ColorGame extends BaseGame {
         // purpose: revealst the end screen when finished with run through
     private void showEndScreen(int finalScore){
 //        System.out.println("GAME OVER");
-        hs.setPlayerScore(finalScore);
-        hsTrack.addScore(finalScore);
-        hs = new HighScoreScreen();
-        hs.setVisible(true);
-        hs.Back.setVisible(false);
-        hs.End.setVisible(true);
-        hs.Player_Score.setVisible(true);
-        hs.Player_Score.setText("Your Score: " + finalScore);
+//        hs.setPlayerScore(finalScore);
+//        hsTrack.addScore(finalScore);
+//        hs = new HighScoreScreen();
+//        hs.setVisible(true);
+//        hs.Back.setVisible(false);
+//        hs.End.setVisible(true);
+//        hs.Player_Score.setVisible(true);
+//        hs.Player_Score.setText("Your Score: " + finalScore);
         cgGUI.dispose();
         SudokuGame sgame = new SudokuGame();
         sgame.start();
