@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
+* assignment: Project v1.1
 * date last modified: 1/18/2017
 *
 * purpose: This file is the main menu where the user can choose to play
@@ -22,8 +22,10 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import static cs245.project.Splash.splashInit;
 import static java.lang.Thread.sleep;
-import java.util.Random;
-import javax.swing.ImageIcon;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import sun.audio.*;
+import java.io.*;
 
 /**
  *
@@ -34,11 +36,36 @@ public class MainMenu extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu
      */
+    HangMan hangman = new HangMan();
+    private static int musicControl = 1;
+    AudioStream audio = null;
+    
     public MainMenu() {
         initComponents();
         currentTime();
+        backgroundMusic();
     }
-	
+    
+    //background music
+    public void backgroundMusic()
+    {
+        if(musicControl == 1)
+        {
+        //Play music
+        InputStream inaudio = getClass().getResourceAsStream("/Sounds/SW_music.wav");
+        try{
+            audio = new AudioStream(inaudio);
+            AudioPlayer.player.start(audio);
+        }
+        catch(Exception e)
+        {
+            System.out.print("File not found");
+        }
+        musicControl++;
+        }
+        else
+        AudioPlayer.player.stop(audio);
+    }
 	// method: currentTime
 	// purpose: This method will generate and display the current time
 	// on the main menu
@@ -53,7 +80,9 @@ public class MainMenu extends javax.swing.JFrame {
                         int second = cal.get(Calendar.SECOND);
                         int minute = cal.get(Calendar.MINUTE);
                         int hour = cal.get(Calendar.HOUR);
-                        Clock.setText(hour + ": " + minute + ":  " + second);
+                        Date now = new Date();
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM d, yyyy");
+                        Clock.setText(dateFormatter.format(now) + "    " + hour + ": " + minute + ":  " + second);
                         try{
                             sleep(1000);
                         }
@@ -89,6 +118,7 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         Play.setText("Play");
+        Play.setToolTipText("Press to play the game.");
         Play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PlayActionPerformed(evt);
@@ -98,7 +128,7 @@ public class MainMenu extends javax.swing.JFrame {
         Play.setBounds(70, 350, 83, 23);
 
         High_Score.setText("High Score");
-        High_Score.setToolTipText("");
+        High_Score.setToolTipText("Press to open high score screen.");
         High_Score.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 High_ScoreActionPerformed(evt);
@@ -108,6 +138,7 @@ public class MainMenu extends javax.swing.JFrame {
         High_Score.setBounds(200, 350, 83, 23);
 
         Credits.setText("Credits");
+        Credits.setToolTipText("Press to open the credits screen.");
         Credits.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreditsActionPerformed(evt);
@@ -117,9 +148,10 @@ public class MainMenu extends javax.swing.JFrame {
         Credits.setBounds(330, 350, 83, 23);
 
         Clock.setForeground(new java.awt.Color(153, 0, 0));
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Clock.setText("TIME");
         getContentPane().add(Clock);
-        Clock.setBounds(460, 20, 70, 20);
+        Clock.setBounds(310, 20, 270, 20);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -149,18 +181,29 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
         // TODO add your handling code here:
+        backgroundMusic();
+        AudioStream audio = null;
+        //Play music
+        InputStream inaudio = getClass().getResourceAsStream("/Sounds/Roger_roger.wav");
+        try{
+            audio = new AudioStream(inaudio);
+            AudioPlayer.player.start(audio);
+        }
+        catch(Exception e)
+        {
+            System.out.print("File not found");
+        }
         //Select a word
         /*String[] WORD_LIST = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
         String selectedWord;
         int randIndex = new Random().nextInt(WORD_LIST.length+1);
         selectedWord = WORD_LIST[randIndex];*/
         HangMan hangman = new HangMan();
-        MainMenu menu = new MainMenu();
         hangman.start();
         PlayScreen play = new PlayScreen(hangman);
         hangman.setPlayScreen(play);
         play.setVisible(true);
-        menu.setVisible(false);
+        setVisible(false);
         this.dispose();
         
     }//GEN-LAST:event_PlayActionPerformed

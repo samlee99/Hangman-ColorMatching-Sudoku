@@ -3,8 +3,8 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
-* date last modified: 1/18/2017
+* assignment: Project v1.1
+* date last modified: 1/25/2017
 *
 * purpose: This file is for the actual HangMan game where the user
 * will play the game.  The user's score will be displayed on the high
@@ -24,6 +24,8 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import sun.audio.*;
+import java.io.*;
 
 /**
  *	
@@ -36,10 +38,12 @@ public class HangMan extends BaseGame{
     private String hiddenWord;
     private char selectedChar;
     private int attempt;
-    private int score = 100;
+    //public int score = 100;
     private Thread t;
     private String threadName = "hangman";
     HighScoreScreen hs = new HighScoreScreen();
+    ColorGame cg;
+    ColorGameGUI cgGUI;
     private PlayScreen ps;
     private int badGuess = 1;
     private int guessesToWin = 10;
@@ -55,7 +59,7 @@ public class HangMan extends BaseGame{
     @Override
     protected void initGame(){
         running = true;
-        score = 100;
+        setScore(100);
         selectedChar = ' ';
         //Select a word
         int randIndex = new Random().nextInt(WORD_LIST.length);
@@ -126,16 +130,40 @@ public class HangMan extends BaseGame{
                 ps.hideKey(selectedChar);
                 guessesToWin--;
                 selectedChar = ' ';
-            }else{
+                AudioStream audio = null;
+                //Play music
+                InputStream inaudio = getClass().getResourceAsStream("/Sounds/Correct_answer.wav");
+                try{
+                    audio = new AudioStream(inaudio);
+                    AudioPlayer.player.start(audio);
+                }
+                catch(Exception e)
+                {
+                    System.out.print("File not found");
+                }
+            }
+            else{
                 System.err.println("Did not find " + selectedChar);
                 ps.hideKey(selectedChar);
                 selectedChar = ' ';
                 badGuess += 1;
                 changeImage(badGuess);
-                changeScore(-10);
+                modifyScore(-10);
+                ps.gameScore.setText("Score: " + getScore());
+                AudioStream audio = null;
+                //Play music
+                InputStream inaudio = getClass().getResourceAsStream("/Sounds/Shots_fired.wav");
+                try{
+                    audio = new AudioStream(inaudio);
+                    AudioPlayer.player.start(audio);
+                }
+                catch(Exception e)
+                {
+                    System.out.print("File not found");
+                }
             }
             if(guessesToWin == 0){
-                loadEndPage(score);
+                loadColorPage(getScore());
                 ps.dispose();
             }
             else if (badGuess == guessesToLose){
@@ -151,11 +179,11 @@ public class HangMan extends BaseGame{
     }
     // method: changeScore
 	// purpose: updates the score when the player has an incorrect guess
-    public void changeScore(int change)
+   /* public void changeScore(int change)
     {
         score += change;
         ps.gameScore.setText("Score: " + score);
-    }
+    }*/
     // method: changeImage
 	// parameter: the number of incorrect guesses
 	// purpose: updates the "hanged man" with the latest image
@@ -171,13 +199,26 @@ public class HangMan extends BaseGame{
 	// purpose: loads the end game page
     public void loadEndPage(int realScore)
     {
-        hs.setVisible(true);
+        loadColorPage(realScore);
+        /*hs.setVisible(true);
         hs.setPlayerScore(realScore);
         hs.Back.setVisible(false);
         hs.End.setVisible(true);
         hs.Player_Score.setVisible(true);
-        hs.Player_Score.setText("Your Score: " + realScore);
+        hs.Player_Score.setText("Your Score: " + realScore);*/
     }
+        // method: loadColorPage
+            // purpose: this loads up the color page
+    public void loadColorPage(int realScore)
+    {
+        cg = new ColorGame();
+        cg.start();
+        cgGUI = new ColorGameGUI();
+        cgGUI.setColorGame(cg);
+        // TODO add your handling code here:
+        cg.loadColorPage(getScore(),cgGUI);        
+    }
+    
 	// method: selectCharacter
 	// parameter: selected char
 	// purpose: Updates the selected character with the latest choice
@@ -208,7 +249,7 @@ public class HangMan extends BaseGame{
     }
     // method: getScore
 	// purpose: gets the score
-    public int getScore(){
+    /*public int getScore(){
         return score;
-    }
+    }*/
 }

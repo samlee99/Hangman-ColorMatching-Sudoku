@@ -3,12 +3,12 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
-* date last modified: 1/18/2017
+* assignment: Project v1.1
+* date last modified: 1/25/2017
 *
-* purpose: This file is for the high scores screen.  Currently a dummy
-* but will implement more on the next checkpoint.  Does replace the 'back'
-* button with the 'end' button when the user decides to 'skip' a game.
+* purpose: This file is for the high scores screen.  Updates according to
+* a text file. Does replace the 'back' button with the 'end' button when the 
+* user decides to 'skip' a game.
 *
 ****************************************************************/ 
 /*
@@ -17,6 +17,13 @@
  * and open the template in the editor.
  */
 package cs245.project;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
 
 /**
  *
@@ -28,13 +35,30 @@ public class HighScoreScreen extends javax.swing.JFrame {
      * Creates new form HighScoreScreen
      */
     int score;
-    
+     private static final String FILE_NAME = "highscorerecord.txt";
+
     public HighScoreScreen() {
         initComponents();
+        displayScores();
         Player_Score.setVisible(false);
         End.setVisible(false);
+        ScoreBox.setEditable(false);
+        
     }
-    
+        // method: displayScores
+            // purpose: reads and displays scores from the text file
+    public void displayScores() {
+        try{
+        FileReader reader = new FileReader(FILE_NAME);
+        BufferedReader br = new BufferedReader(reader);
+        ScoreBox.read(br, null);
+        br.close();
+        }
+        
+        catch(Exception e) {
+            
+        }
+    }
     public void setPlayerScore(int score)
     {
         this.score = score;
@@ -51,19 +75,16 @@ public class HighScoreScreen extends javax.swing.JFrame {
 
         Back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         Player_Score = new javax.swing.JLabel();
         End = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ScoreBox = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setPreferredSize(new java.awt.Dimension(618, 440));
 
         Back.setText("Back");
+        Back.setToolTipText("Exit to main menu.");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -73,76 +94,72 @@ public class HighScoreScreen extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/hs.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel2.setText("AMN ..... 9001");
-
-        jLabel3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel3.setText("ABC ..... 00000");
-
-        jLabel4.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel4.setText("ABC ..... 00000");
-
-        jLabel5.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel5.setText("ABC ..... 00000");
-
-        jLabel6.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel6.setText("ABC ..... 00000");
-
         Player_Score.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
         Player_Score.setText("Your Score: 100");
 
         End.setText("End");
+        End.setToolTipText("Exit to main menu.");
         End.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EndActionPerformed(evt);
             }
         });
 
+        ScoreBox.setColumns(20);
+        ScoreBox.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        ScoreBox.setRows(5);
+        ScoreBox.setMaximumSize(new java.awt.Dimension(150, 115));
+        ScoreBox.setMinimumSize(new java.awt.Dimension(150, 115));
+        ScoreBox.setVerifyInputWhenFocusTarget(false);
+        jScrollPane1.setViewportView(ScoreBox);
+        try{
+            FileReader reader = new FileReader(FILE_NAME);
+            BufferedReader br = new BufferedReader(reader);
+            ScoreBox.read(br, null);
+            br.close();
+        }
+        catch(Exception e) {
+
+        }
+        ScoreBox.setLineWrap(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(191, 191, 191)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Player_Score)))
-                            .addComponent(Back)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addComponent(End)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Back)
+                .addContainerGap(535, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(Player_Score)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(End)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Player_Score)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(End)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Back)
                 .addContainerGap())
         );
@@ -205,11 +222,8 @@ public class HighScoreScreen extends javax.swing.JFrame {
     public javax.swing.JButton Back;
     public javax.swing.JButton End;
     public javax.swing.JLabel Player_Score;
+    private javax.swing.JTextArea ScoreBox;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

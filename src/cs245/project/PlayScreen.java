@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
+* assignment: Project v1.1
 * date last modified: 1/18/2017
 *
 * purpose: This file is the play screen, which is what the user will
@@ -17,6 +17,8 @@
  */
 package cs245.project;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -35,7 +37,7 @@ public class PlayScreen extends javax.swing.JFrame {
     String hiddenWord;
     //will be used to check if letter is in word
     String[] wordArray;
-    
+    ColorGame cg;
     HangMan hangman;
     HashMap<Character, javax.swing.JButton> letterButtonMap  = new HashMap<>(); 
     
@@ -110,10 +112,13 @@ public class PlayScreen extends javax.swing.JFrame {
                     for(;;)
                     {
                         GregorianCalendar cal = new GregorianCalendar();
+                        
                         int second = cal.get(GregorianCalendar.SECOND);
                         int minute = cal.get(GregorianCalendar.MINUTE);
                         int hour = cal.get(GregorianCalendar.HOUR);
-                        Clock.setText(hour + ": " + minute + ":  " + second);
+                        Date now = new Date();
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM d, yyyy");
+                        Clock.setText(dateFormatter.format(now) + "    " + hour + ": " + minute + ":  " + second);
                         try{
                             sleep(1000);
                         }
@@ -237,6 +242,7 @@ public class PlayScreen extends javax.swing.JFrame {
 
         Skip.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Skip.setText("Skip");
+        Skip.setToolTipText("Press to skip to the color game.");
         Skip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SkipActionPerformed(evt);
@@ -336,6 +342,7 @@ public class PlayScreen extends javax.swing.JFrame {
         R.setBounds(480, 350, 50, 23);
 
         A.setText("A");
+        A.setToolTipText("");
         A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AActionPerformed(evt);
@@ -432,10 +439,13 @@ public class PlayScreen extends javax.swing.JFrame {
         getContentPane().add(hiddenWordLabel);
         hiddenWordLabel.setBounds(100, 0, 260, 30);
 
+        Clock.setBackground(new java.awt.Color(204, 204, 255));
         Clock.setForeground(new java.awt.Color(204, 0, 0));
+        Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Clock.setText("TEXT");
+        Clock.setOpaque(true);
         getContentPane().add(Clock);
-        Clock.setBounds(500, 10, 68, 14);
+        Clock.setBounds(430, 10, 160, 14);
 
         gameScore.setBackground(new java.awt.Color(255, 255, 255));
         gameScore.setOpaque(true);
@@ -612,8 +622,13 @@ public class PlayScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_TActionPerformed
 
     private void SkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipActionPerformed
+        cg = new ColorGame();
+        cg.start();
+        ColorGameGUI cgGUI = new ColorGameGUI();
+        cgGUI.setColorGame(cg);
+        hangman.setScore(0);
         // TODO add your handling code here:
-        hangman.loadEndPage(0);
+        cg.loadColorPage(hangman.getScore(),cgGUI);
         this.dispose();
     }//GEN-LAST:event_SkipActionPerformed
 

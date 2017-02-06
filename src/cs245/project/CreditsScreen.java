@@ -3,8 +3,8 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.0
-* date last modified: 1/18/2017
+* assignment: Project v1.1
+* date last modified: 1/25/2017
 *
 * purpose: This file is for the credits screen where the group's
 * names and bronco-IDs will be displayed.
@@ -66,6 +66,7 @@ public class CreditsScreen extends javax.swing.JFrame {
         jLabel6.setText("Steven Mai, 009593233");
 
         jButton1.setText("Back");
+        jButton1.setToolTipText("Exit to main menu.");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
