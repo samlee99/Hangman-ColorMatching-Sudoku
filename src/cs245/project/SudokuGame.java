@@ -5,6 +5,7 @@
  */
 package cs245.project;
 
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -116,6 +117,18 @@ public class SudokuGame extends BaseGame {
                 k++;
             }
         }
+        
+        if(sudokuScore < 540) {
+            int reply = JOptionPane.showConfirmDialog(null, "Retry?", "Incorrect answer.  Would you like to try again?", JOptionPane.YES_NO_OPTION);
+            if(reply == JOptionPane.NO_OPTION) {
+                endGame();
+            }
+        } else {
+            endGame();
+        }
+    }
+
+    private void endGame() {
         HighScoreScreen hs = new HighScoreScreen();
         HighScoreTracker hsTrack = new HighScoreTracker();
         hs.setPlayerScore(getScore() + sudokuScore);
@@ -128,6 +141,4 @@ public class SudokuGame extends BaseGame {
         hs.Player_Score.setText("Your Score: " + (getScore() + sudokuScore));
         sGui.dispose();
     }
-
-    
 }
