@@ -50,7 +50,7 @@ public class Splash {
         nameFont = new Font("Arial", Font.PLAIN, 30);
         splashName.setFont(nameFont); 
             
-        splashTitleText("Rebel Scum: Hangman Edition");
+        splashTitleText("Rebel Scum: Game Collection");
         splashNameText("By: Team TBD");
             
     }
@@ -59,7 +59,7 @@ public class Splash {
     public static void splashTitleText(String str){
         if (splash != null && splash.isVisible()) {
             splashTitle.setPaint(Color.YELLOW);
-            splashTitle.drawString(str, (int)(splashTitleSpace.getX() + 10),(int)(splashTitleSpace.getY() + 15));
+            splashTitle.drawString(str, (int)(splashTitleSpace.getX() + 20),(int)(splashTitleSpace.getY() + 15));
             splash.update();
         }
     }
