@@ -16,6 +16,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Shape;
+import java.awt.event.ActionEvent;
 import java.awt.geom.Ellipse2D;
 import static java.lang.Thread.sleep;
 import java.lang.reflect.Field;
@@ -27,10 +28,14 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 /**
  *
  * @author amnipp
@@ -46,11 +51,42 @@ public class ColorGameGUI extends javax.swing.JFrame {
     public ColorGameGUI() {
         initComponents();
         currentTime();
+        addBindings();
     }
 
     public void setColorGame(ColorGame cg){
         this.cg = cg;
     }
+    
+    //method: addBindings
+    //purpose: adds keyBindings to the Clock label
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        Action credits = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                System.out.print("test1\n");
+                MainMenu menu = new MainMenu();
+                CreditsScreen credits = new CreditsScreen();
+                menu.setVisible(false);
+                credits.setVisible(true);
+                dispose();
+            }
+        };
+        String actName = "exit";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        Clock.getActionMap().put(actName, exit);
+        actName = "credits";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"),
+                actName);
+        Clock.getActionMap().put(actName, credits);
+    }
+    
     //method: initRandomColors()
     //purpose: this method chooses what colors the buttons are 
     public void initRandomColors(){

@@ -18,12 +18,17 @@
  */
 package cs245.project;
 
+import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -40,11 +45,42 @@ public class HighScoreScreen extends javax.swing.JFrame {
     public HighScoreScreen() {
         initComponents();
         displayScores();
+        addBindings();
         Player_Score.setVisible(false);
         End.setVisible(false);
         ScoreBox.setEditable(false);
         
     }
+    
+    //method: addBindings
+    //purpose: adds keyBindings to the label jLabel1
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        Action credits = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                System.out.print("test1\n");
+                MainMenu menu = new MainMenu();
+                CreditsScreen credits = new CreditsScreen();
+                menu.setVisible(false);
+                credits.setVisible(true);
+                dispose();
+            }
+        };
+        String actName = "exit";
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        jLabel1.getActionMap().put(actName, exit);
+        actName = "credits";
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"),
+                actName);
+        jLabel1.getActionMap().put(actName, credits);
+    }
+    
         // method: displayScores
             // purpose: reads and displays scores from the text file
     public void displayScores() {

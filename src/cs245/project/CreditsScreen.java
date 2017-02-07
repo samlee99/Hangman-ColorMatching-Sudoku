@@ -16,6 +16,13 @@
  * and open the template in the editor.
  */
 package cs245.project;
+
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
+
 /**
  *
  * @author PC
@@ -27,8 +34,24 @@ public class CreditsScreen extends javax.swing.JFrame {
      */
     public CreditsScreen() {
         initComponents();
+        addBindings();
     }
 
+    //method: addBindings
+    //purpose: adds keyBindings to the label jLabel1
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        String actName = "exit";
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        jLabel1.getActionMap().put(actName, exit);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,6 +151,7 @@ public class CreditsScreen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */

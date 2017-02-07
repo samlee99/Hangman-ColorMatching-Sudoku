@@ -17,11 +17,16 @@
  */
 package cs245.project;
 
+import java.awt.event.ActionEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -45,7 +50,38 @@ public class PlayScreen extends javax.swing.JFrame {
 	// purpose: the default constructor
     public PlayScreen() {
         initComponents();
+        addBindings();
     }
+    
+    //method: addBindings
+    //purpose: adds keyBindings to the Clock label
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        Action credits = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                System.out.print("test1\n");
+                MainMenu menu = new MainMenu();
+                CreditsScreen credits = new CreditsScreen();
+                menu.setVisible(false);
+                credits.setVisible(true);
+                dispose();
+            }
+        };
+        String actName = "exit";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        Clock.getActionMap().put(actName, exit);
+        actName = "credits";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"),
+                actName);
+        Clock.getActionMap().put(actName, credits);
+    }
+    
     // method: mapButtonToLetters
 	// purpose: Maps a charcter to a jButton to be used by other methods; such as hideKey
     public void mapButtonToLetters(){
@@ -92,7 +128,8 @@ public class PlayScreen extends javax.swing.JFrame {
 	// word lines
     public PlayScreen(HangMan hangman) {
         this.hangman = hangman;
-        initComponents();        
+        initComponents();
+        addBindings();
         mapButtonToLetters();
         this.selectedWord = hangman.getSelectedWord();
         wordArray = selectedWord.split("");

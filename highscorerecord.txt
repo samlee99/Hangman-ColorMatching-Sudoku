@@ -1,5 +1,5 @@
+null 1030
+null 940
 SAM 600
 RIP 200
-GGG 180
-AWE 160
- 140
+null 200
