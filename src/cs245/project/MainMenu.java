@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
+* assignment: Project v1.2
 * date last modified: 1/18/2017
 *
 * purpose: This file is the main menu where the user can choose to play
@@ -33,6 +33,7 @@ import javax.swing.KeyStroke;
 import javax.swing.Action;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 /**
  *

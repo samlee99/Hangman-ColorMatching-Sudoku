@@ -3,8 +3,8 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
-* date last modified: 1/25/2017
+* assignment: Project v1.2
+* date last modified: 2/7/2017
 *
 * purpose: This is the BaseGame Class, which is the super class of the
 * hangman and colors game.

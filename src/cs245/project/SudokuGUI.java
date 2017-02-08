@@ -1,3 +1,15 @@
+/***************************************************************
+* file: SudokuGame.java
+* author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+* class: CS 245 – Programming Graphical User Interfaces
+*
+* assignment: Project v1.2
+* date last modified: 2/7/2017
+*
+* purpose: This is the view for the sudoku game
+* 
+*
+****************************************************************/ 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
