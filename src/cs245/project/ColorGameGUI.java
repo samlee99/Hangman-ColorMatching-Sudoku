@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
+* assignment: Project v1.2
 * date last modified: 1/25/2017
 *
 * purpose: This is the color game GUI file. It deals with displaying
@@ -16,6 +16,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Shape;
+import java.awt.event.ActionEvent;
 import java.awt.geom.Ellipse2D;
 import static java.lang.Thread.sleep;
 import java.lang.reflect.Field;
@@ -27,10 +28,14 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 /**
  *
  * @author amnipp
@@ -46,11 +51,42 @@ public class ColorGameGUI extends javax.swing.JFrame {
     public ColorGameGUI() {
         initComponents();
         currentTime();
+        addBindings();
     }
 
     public void setColorGame(ColorGame cg){
         this.cg = cg;
     }
+    
+    //method: addBindings
+    //purpose: adds keyBindings to the Clock label
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        Action credits = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                System.out.print("test1\n");
+                MainMenu menu = new MainMenu();
+                CreditsScreen credits = new CreditsScreen();
+                menu.setVisible(false);
+                credits.setVisible(true);
+                dispose();
+            }
+        };
+        String actName = "exit";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        Clock.getActionMap().put(actName, exit);
+        actName = "credits";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"),
+                actName);
+        Clock.getActionMap().put(actName, credits);
+    }
+    
     //method: initRandomColors()
     //purpose: this method chooses what colors the buttons are 
     public void initRandomColors(){
@@ -202,7 +238,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(colorBtn1);
-        colorBtn1.setBounds(70, 100, 120, 120);
+        colorBtn1.setBounds(70, 60, 120, 120);
 
         colorBtn2.setToolTipText("Click the death star!");
         colorBtn2.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +247,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(colorBtn2);
-        colorBtn2.setBounds(150, 250, 120, 120);
+        colorBtn2.setBounds(150, 220, 120, 120);
 
         colorBtn3.setToolTipText("Click the death star!");
         colorBtn3.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +256,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(colorBtn3);
-        colorBtn3.setBounds(340, 250, 120, 120);
+        colorBtn3.setBounds(350, 220, 120, 120);
 
         colorBtn4.setToolTipText("Click the death star!");
         colorBtn4.addActionListener(new java.awt.event.ActionListener() {
@@ -238,11 +274,11 @@ public class ColorGameGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(colorBtn5);
-        colorBtn5.setBounds(420, 100, 120, 120);
+        colorBtn5.setBounds(420, 70, 120, 120);
 
         scoreLabel.setText("Score");
         getContentPane().add(scoreLabel);
-        scoreLabel.setBounds(470, 50, 100, 20);
+        scoreLabel.setBounds(60, 20, 100, 20);
 
         Clock.setForeground(java.awt.Color.red);
         Clock.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -252,7 +288,7 @@ public class ColorGameGUI extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/white.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 600, 400);
+        jLabel1.setBounds(0, 0, 600, 410);
 
         pack();
         setLocationRelativeTo(null);

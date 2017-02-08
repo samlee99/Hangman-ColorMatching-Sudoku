@@ -1,3 +1,15 @@
+/***************************************************************
+* file: SudokuGame.java
+* author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+* class: CS 245 – Programming Graphical User Interfaces
+*
+* assignment: Project v1.2
+* date last modified: 2/7/2017
+*
+* purpose: This is the model for the sudoku game.
+* 
+*
+****************************************************************/ 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -122,6 +134,8 @@ public class SudokuGame extends BaseGame {
             int reply = JOptionPane.showConfirmDialog(null, "Retry?", "Incorrect answer.  Would you like to try again?", JOptionPane.YES_NO_OPTION);
             if(reply == JOptionPane.NO_OPTION) {
                 endGame();
+            } else {
+                sudokuScore = 540;
             }
         } else {
             endGame();

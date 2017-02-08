@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
+* assignment: Project v1.2
 * date last modified: 1/18/2017
 *
 * purpose: This file is the play screen, which is what the user will
@@ -17,11 +17,16 @@
  */
 package cs245.project;
 
+import java.awt.event.ActionEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -45,7 +50,38 @@ public class PlayScreen extends javax.swing.JFrame {
 	// purpose: the default constructor
     public PlayScreen() {
         initComponents();
+        addBindings();
     }
+    
+    //method: addBindings
+    //purpose: adds keyBindings to the Clock label
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        Action credits = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                System.out.print("test1\n");
+                MainMenu menu = new MainMenu();
+                CreditsScreen credits = new CreditsScreen();
+                menu.setVisible(false);
+                credits.setVisible(true);
+                dispose();
+            }
+        };
+        String actName = "exit";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        Clock.getActionMap().put(actName, exit);
+        actName = "credits";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"),
+                actName);
+        Clock.getActionMap().put(actName, credits);
+    }
+    
     // method: mapButtonToLetters
 	// purpose: Maps a charcter to a jButton to be used by other methods; such as hideKey
     public void mapButtonToLetters(){
@@ -92,7 +128,8 @@ public class PlayScreen extends javax.swing.JFrame {
 	// word lines
     public PlayScreen(HangMan hangman) {
         this.hangman = hangman;
-        initComponents();        
+        initComponents();
+        addBindings();
         mapButtonToLetters();
         this.selectedWord = hangman.getSelectedWord();
         wordArray = selectedWord.split("");
@@ -193,7 +230,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(U);
-        U.setBounds(180, 380, 50, 23);
+        U.setBounds(180, 380, 50, 25);
 
         V.setText("V");
         V.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +239,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(V);
-        V.setBounds(230, 380, 50, 23);
+        V.setBounds(230, 380, 50, 25);
 
         W.setText("W");
         W.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +248,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(W);
-        W.setBounds(280, 380, 50, 23);
+        W.setBounds(280, 380, 50, 25);
 
         X.setText("X");
         X.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +257,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(X);
-        X.setBounds(330, 380, 50, 23);
+        X.setBounds(330, 380, 50, 25);
 
         Y.setText("Y");
         Y.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +266,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Y);
-        Y.setBounds(380, 380, 50, 23);
+        Y.setBounds(380, 380, 50, 25);
 
         Z.setText("Z");
         Z.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +275,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Z);
-        Z.setBounds(430, 380, 50, 23);
+        Z.setBounds(430, 380, 50, 25);
 
         Skip.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Skip.setText("Skip");
@@ -249,7 +286,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Skip);
-        Skip.setBounds(480, 380, 50, 19);
+        Skip.setBounds(480, 380, 50, 20);
 
         I.setText("I");
         I.addActionListener(new java.awt.event.ActionListener() {
@@ -258,7 +295,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(I);
-        I.setBounds(480, 320, 50, 23);
+        I.setBounds(480, 320, 50, 25);
 
         J.setText("J");
         J.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +304,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(J);
-        J.setBounds(80, 350, 50, 23);
+        J.setBounds(80, 350, 50, 25);
 
         K.setText("K");
         K.addActionListener(new java.awt.event.ActionListener() {
@@ -276,7 +313,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(K);
-        K.setBounds(130, 350, 50, 23);
+        K.setBounds(130, 350, 50, 25);
 
         L.setText("L");
         L.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +322,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(L);
-        L.setBounds(180, 350, 50, 23);
+        L.setBounds(180, 350, 50, 25);
 
         M.setText("M");
         M.addActionListener(new java.awt.event.ActionListener() {
@@ -294,7 +331,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(M);
-        M.setBounds(230, 350, 50, 23);
+        M.setBounds(230, 350, 50, 25);
 
         N.setText("N");
         N.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +340,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(N);
-        N.setBounds(280, 350, 50, 23);
+        N.setBounds(280, 350, 50, 25);
 
         O.setText("O");
         O.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +349,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(O);
-        O.setBounds(330, 350, 50, 23);
+        O.setBounds(330, 350, 50, 25);
 
         P.setText("P");
         P.addActionListener(new java.awt.event.ActionListener() {
@@ -321,7 +358,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(P);
-        P.setBounds(380, 350, 50, 23);
+        P.setBounds(380, 350, 50, 25);
 
         Q.setText("Q");
         Q.addActionListener(new java.awt.event.ActionListener() {
@@ -330,7 +367,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Q);
-        Q.setBounds(430, 350, 50, 23);
+        Q.setBounds(430, 350, 50, 25);
 
         R.setText("R");
         R.addActionListener(new java.awt.event.ActionListener() {
@@ -339,7 +376,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(R);
-        R.setBounds(480, 350, 50, 23);
+        R.setBounds(480, 350, 50, 25);
 
         A.setText("A");
         A.setToolTipText("");
@@ -349,7 +386,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(A);
-        A.setBounds(80, 320, 50, 23);
+        A.setBounds(80, 320, 50, 25);
 
         B.setText("B");
         B.addActionListener(new java.awt.event.ActionListener() {
@@ -358,7 +395,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(B);
-        B.setBounds(130, 320, 50, 23);
+        B.setBounds(130, 320, 50, 25);
 
         C.setText("C");
         C.addActionListener(new java.awt.event.ActionListener() {
@@ -367,7 +404,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(C);
-        C.setBounds(180, 320, 50, 23);
+        C.setBounds(180, 320, 50, 25);
 
         D.setText("D");
         D.addActionListener(new java.awt.event.ActionListener() {
@@ -376,7 +413,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(D);
-        D.setBounds(230, 320, 50, 23);
+        D.setBounds(230, 320, 50, 25);
 
         E.setText("E");
         E.addActionListener(new java.awt.event.ActionListener() {
@@ -385,7 +422,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(E);
-        E.setBounds(280, 320, 50, 23);
+        E.setBounds(280, 320, 50, 25);
 
         F.setText("F");
         F.addActionListener(new java.awt.event.ActionListener() {
@@ -394,7 +431,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(F);
-        F.setBounds(330, 320, 50, 23);
+        F.setBounds(330, 320, 50, 25);
 
         G.setText("G");
         G.addActionListener(new java.awt.event.ActionListener() {
@@ -403,7 +440,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(G);
-        G.setBounds(380, 320, 50, 23);
+        G.setBounds(380, 320, 50, 25);
 
         H.setText("H");
         H.addActionListener(new java.awt.event.ActionListener() {
@@ -412,7 +449,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(H);
-        H.setBounds(430, 320, 50, 23);
+        H.setBounds(430, 320, 50, 25);
 
         S.setText("S");
         S.addActionListener(new java.awt.event.ActionListener() {
@@ -421,7 +458,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(S);
-        S.setBounds(80, 380, 50, 23);
+        S.setBounds(80, 380, 50, 25);
 
         T.setText("T");
         T.addActionListener(new java.awt.event.ActionListener() {
@@ -430,7 +467,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(T);
-        T.setBounds(130, 380, 50, 23);
+        T.setBounds(130, 380, 50, 25);
 
         hiddenWordLabel.setBackground(new java.awt.Color(255, 255, 255));
         hiddenWordLabel.setForeground(new java.awt.Color(204, 0, 0));
@@ -445,7 +482,7 @@ public class PlayScreen extends javax.swing.JFrame {
         Clock.setText("TEXT");
         Clock.setOpaque(true);
         getContentPane().add(Clock);
-        Clock.setBounds(430, 10, 160, 14);
+        Clock.setBounds(430, 10, 160, 16);
 
         gameScore.setBackground(new java.awt.Color(255, 255, 255));
         gameScore.setOpaque(true);
@@ -456,13 +493,13 @@ public class PlayScreen extends javax.swing.JFrame {
 
         button_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/black.jpg"))); // NOI18N
         getContentPane().add(button_background);
-        button_background.setBounds(0, 300, 600, 100);
+        button_background.setBounds(0, 300, 600, 110);
 
         Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs245/project/trooper_images/trooper1.png"))); // NOI18N
         getContentPane().add(Image);
         Image.setBounds(0, 0, 600, 300);
 
-        setSize(new java.awt.Dimension(616, 439));
+        setSize(new java.awt.Dimension(616, 454));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

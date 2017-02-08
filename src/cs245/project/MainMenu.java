@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
+* assignment: Project v1.2
 * date last modified: 1/18/2017
 *
 * purpose: This file is the main menu where the user can choose to play
@@ -21,11 +21,19 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import static cs245.project.Splash.splashInit;
+import java.awt.Event;
+import java.awt.event.KeyEvent;
 import static java.lang.Thread.sleep;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import sun.audio.*;
 import java.io.*;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
+import javax.swing.Action;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -44,6 +52,36 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
         currentTime();
         backgroundMusic();
+        addBindings();
+    }
+    
+    //method: addBindings
+    //purpose: adds keyBindings to the Clock label
+    public void addBindings(){
+        Action exit = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                System.exit(0);
+            }
+        };
+        Action credits = new AbstractAction(){
+            public void actionPerformed(ActionEvent e){
+                System.out.print("test1\n");
+                MainMenu menu = new MainMenu();
+                CreditsScreen credits = new CreditsScreen();
+                menu.setVisible(false);
+                credits.setVisible(true);
+                dispose();
+            }
+        };
+        String actName = "exit";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"),
+                actName);
+        Clock.getActionMap().put(actName, exit);
+        actName = "credits";
+        Clock.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"),
+                actName);
+        Clock.getActionMap().put(actName, credits);
     }
     
     //background music

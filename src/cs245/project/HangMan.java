@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
+* assignment: Project v1.2
 * date last modified: 1/25/2017
 *
 * purpose: This file is for the actual HangMan game where the user
@@ -172,7 +172,7 @@ public class HangMan extends BaseGame{
                 } catch (InterruptedException ex) {
                     Logger.getLogger(HangMan.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                loadEndPage(0);
+                loadEndPage(40);
                 ps.dispose();
             }
         }

@@ -3,7 +3,7 @@
 * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
 * class: CS 245 – Programming Graphical User Interfaces
 *
-* assignment: Project v1.1
+* assignment: Project v1.2
 * date last modified: 1/25/2017
 *
 * purpose: This is the color game file.  Colors are randomized and user clicks
@@ -160,15 +160,6 @@ public class ColorGame extends BaseGame {
     // method: showEndScreen
         // purpose: revealst the end screen when finished with run through
     private void showEndScreen(int finalScore){
-//        System.out.println("GAME OVER");
-//        hs.setPlayerScore(finalScore);
-//        hsTrack.addScore(finalScore);
-//        hs = new HighScoreScreen();
-//        hs.setVisible(true);
-//        hs.Back.setVisible(false);
-//        hs.End.setVisible(true);
-//        hs.Player_Score.setVisible(true);
-//        hs.Player_Score.setText("Your Score: " + finalScore);
         cgGUI.dispose();
         SudokuGame sgame = new SudokuGame();
         sgame.start();
